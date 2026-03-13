@@ -168,39 +168,39 @@
   }
 
   [data-theme="apocalypse"] {
-    --background: 20 15% 6%;
+    --background: 120 15% 10%;
     --foreground: 30 20% 65%;
 
-    --card: 20 12% 10%;
+    --card: 120 12% 14%;
     --card-foreground: 30 20% 65%;
 
-    --popover: 20 12% 10%;
+    --popover: 120 12% 14%;
     --popover-foreground: 30 20% 65%;
 
-    --primary: 25 90% 45%;
-    --primary-foreground: 20 15% 6%;
+    --primary: 30 40% 55%;
+    --primary-foreground: 120 15% 10%;
 
-    --secondary: 0 60% 40%;
+    --secondary: 30 30% 35%;
     --secondary-foreground: 30 20% 85%;
 
-    --muted: 20 10% 14%;
-    --muted-foreground: 25 15% 40%;
+    --muted: 120 10% 16%;
+    --muted-foreground: 30 15% 40%;
 
-    --accent: 0 60% 40%;
+    --accent: 30 30% 35%;
     --accent-foreground: 30 20% 85%;
 
     --destructive: 0 84% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 25 20% 18%;
-    --input: 20 10% 14%;
-    --ring: 25 90% 45%;
+    --border: 120 15% 20%;
+    --input: 120 10% 16%;
+    --ring: 30 40% 55%;
 
     --radius: 0.25rem;
 
-    --neon-glow: 25 90% 45%;
-    --neon-purple: 0 60% 40%;
-    --neon-pink: 0 60% 40%;
+    --neon-glow: 30 40% 55%;
+    --neon-purple: 30 30% 35%;
+    --neon-pink: 30 30% 35%;
 
     --font-display: 'Special Elite', cursive;
     --font-mono: 'Courier Prime', monospace;
@@ -386,6 +386,11 @@
   }
 
   [data-theme="apocalypse"] .neon-text,
+  [data-theme="apocalypse"] .neon-text-purple,
+  [data-theme="apocalypse"] .neon-text-pink {
+    text-shadow: none;
+  }
+
   [data-theme="steampunk"] .neon-text {
     text-shadow:
       0 0 7px hsl(var(--primary) / 0.6),
