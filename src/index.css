@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=MedievalSharp&family=IM+Fell+English+SC&family=Rajdhani:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Special+Elite&family=Courier+Prime&family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=MedievalSharp&family=IM+Fell+English+SC&family=Rajdhani:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Special+Elite&family=Courier+Prime&family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&family=Cutive+Mono&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -244,6 +244,45 @@
     --font-display: 'M PLUS Rounded 1c', sans-serif;
     --font-mono: 'Zen Maru Gothic', sans-serif;
   }
+
+  [data-theme="steampunk"] {
+    --background: 30 30% 7%;
+    --foreground: 35 50% 75%;
+
+    --card: 30 25% 11%;
+    --card-foreground: 35 50% 75%;
+
+    --popover: 30 25% 11%;
+    --popover-foreground: 35 50% 75%;
+
+    --primary: 35 80% 50%;
+    --primary-foreground: 30 30% 7%;
+
+    --secondary: 25 60% 35%;
+    --secondary-foreground: 35 50% 85%;
+
+    --muted: 30 15% 16%;
+    --muted-foreground: 30 25% 45%;
+
+    --accent: 25 60% 35%;
+    --accent-foreground: 35 50% 85%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 35% 22%;
+    --input: 30 15% 16%;
+    --ring: 35 80% 50%;
+
+    --radius: 0.25rem;
+
+    --neon-glow: 35 80% 50%;
+    --neon-purple: 25 60% 35%;
+    --neon-pink: 25 60% 35%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-mono: 'Cutive Mono', monospace;
+  }
 }
 
 @layer base {
@@ -327,19 +366,22 @@
 
   [data-theme="fantasy"] .scanline,
   [data-theme="modern"] .scanline,
-  [data-theme="apocalypse"] .scanline {
+  [data-theme="apocalypse"] .scanline,
+  [data-theme="steampunk"] .scanline {
     background: none;
   }
 
   [data-theme="fantasy"] .neon-text,
-  [data-theme="apocalypse"] .neon-text {
+  [data-theme="apocalypse"] .neon-text,
+  [data-theme="steampunk"] .neon-text {
     text-shadow:
       0 0 7px hsl(var(--primary) / 0.6),
       0 0 15px hsl(var(--primary) / 0.3);
   }
 
   [data-theme="fantasy"] .neon-box,
-  [data-theme="apocalypse"] .neon-box {
+  [data-theme="apocalypse"] .neon-box,
+  [data-theme="steampunk"] .neon-box {
     box-shadow:
       0 0 8px hsl(var(--primary) / 0.2),
       0 0 15px hsl(var(--primary) / 0.08),
