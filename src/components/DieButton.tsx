@@ -20,9 +20,10 @@ interface DieButtonProps {
   onRoll: (sides: number, result: number) => void;
   isRolling: boolean;
   onStartRoll: (sides: number) => void;
+  compact?: boolean;
 }
 
-const DieButton = ({ sides, onRoll, isRolling, onStartRoll }: DieButtonProps) => {
+const DieButton = ({ sides, onRoll, isRolling, onStartRoll, compact }: DieButtonProps) => {
   const shape = dieShapes[sides];
   const label = sides === 100 ? "d%" : `d${sides}`;
 
@@ -35,12 +36,15 @@ const DieButton = ({ sides, onRoll, isRolling, onStartRoll }: DieButtonProps) =>
     }, 600);
   };
 
+  const svgSize = compact ? 36 : 64;
+  const fontSize = compact ? (sides === 100 ? "12" : "14") : (sides === 100 ? "18" : "22");
+
   return (
     <button
       onClick={handleClick}
       disabled={isRolling}
       className={`
-        group relative flex flex-col items-center gap-2 p-4 rounded-lg
+        group relative flex flex-col items-center ${compact ? "gap-1 p-2" : "gap-2 p-4"} rounded-lg
         border border-border bg-card transition-all duration-200
         hover:neon-border hover:neon-box
         disabled:opacity-50 disabled:cursor-not-allowed
@@ -48,8 +52,8 @@ const DieButton = ({ sides, onRoll, isRolling, onStartRoll }: DieButtonProps) =>
       `}
     >
       <svg
-        width="64"
-        height="64"
+        width={svgSize}
+        height={svgSize}
         viewBox={shape.viewBox}
         className="drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)] transition-all group-hover:drop-shadow-[0_0_16px_hsl(var(--primary)/0.8)]"
       >
@@ -66,14 +70,14 @@ const DieButton = ({ sides, onRoll, isRolling, onStartRoll }: DieButtonProps) =>
           dominantBaseline="middle"
           textAnchor="middle"
           fill="hsl(var(--primary))"
-          fontSize={sides === 100 ? "18" : "22"}
+          fontSize={fontSize}
           fontFamily="Orbitron, sans-serif"
           fontWeight="bold"
         >
           {sides}
         </text>
       </svg>
-      <span className="font-display text-xs tracking-widest text-muted-foreground uppercase group-hover:neon-text transition-all">
+      <span className={`font-display ${compact ? "text-[10px]" : "text-xs"} tracking-widest text-muted-foreground uppercase group-hover:neon-text transition-all`}>
         {label}
       </span>
     </button>
