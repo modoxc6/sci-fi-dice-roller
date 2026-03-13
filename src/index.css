@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=MedievalSharp&family=IM+Fell+English+SC&family=Rajdhani:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Special+Elite&family=Courier+Prime&family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=MedievalSharp&family=IM+Fell+English+SC&family=Rajdhani:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Special+Elite&family=Courier+Prime&family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&family=Cutive+Mono&family=Bangers&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -241,8 +241,13 @@
     --neon-purple: 220 85% 55%;
     --neon-pink: 45 95% 55%;
 
-    --font-display: 'M PLUS Rounded 1c', sans-serif;
+    --font-display: 'Bangers', cursive;
     --font-mono: 'Zen Maru Gothic', sans-serif;
+
+    --anime-red: 4 90% 55%;
+    --anime-yellow: 45 95% 50%;
+    --anime-blue: 220 85% 55%;
+    --anime-green: 145 80% 40%;
   }
 
   [data-theme="steampunk"] {
@@ -436,8 +441,6 @@
   [data-theme="anime"] .neon-text-purple,
   [data-theme="anime"] .neon-text-pink {
     text-shadow: none;
-    -webkit-text-stroke: 2px hsl(var(--border));
-    paint-order: stroke fill;
   }
 
   [data-theme="anime"] .neon-box {

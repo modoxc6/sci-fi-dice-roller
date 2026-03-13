@@ -2,6 +2,7 @@ import { useState } from "react";
 import DieButton from "@/components/DieButton";
 import RollLog, { RollEntry } from "@/components/RollLog";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import AnimeText from "@/components/AnimeText";
 
 const DICE = [4, 6, 8, 10, 12, 20, 100];
 
@@ -48,7 +49,7 @@ const Index = () => {
         {/* Title */}
         <div className="text-center space-y-2">
           <h1 className="font-display text-4xl md:text-5xl font-black tracking-wider neon-text">
-            ROLL OR DIE
+            <AnimeText text="ROLL OR DIE" className="neon-text" />
           </h1>
           <p className="font-mono text-sm text-muted-foreground tracking-widest uppercase">
             Select your fate
@@ -65,7 +66,7 @@ const Index = () => {
           {showResult && lastResult && (
             <div className="flex flex-col items-center animate-result-flash">
               <span className="font-display text-6xl md:text-7xl font-black neon-text">
-                {lastResult.result}
+                <AnimeText text={String(lastResult.result)} className="neon-text" />
               </span>
               <span className="font-display text-sm text-muted-foreground tracking-widest mt-1">
                 {dieLabel(lastResult.sides)}
