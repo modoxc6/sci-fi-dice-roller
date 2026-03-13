@@ -288,6 +288,45 @@
     --font-display: 'Playfair Display', serif;
     --font-mono: 'Cutive Mono', monospace;
   }
+
+  [data-theme="vaporwave"] {
+    --background: 260 25% 12%;
+    --foreground: 300 80% 85%;
+
+    --card: 260 20% 16%;
+    --card-foreground: 300 80% 85%;
+
+    --popover: 260 20% 16%;
+    --popover-foreground: 300 80% 85%;
+
+    --primary: 180 80% 65%;
+    --primary-foreground: 260 25% 10%;
+
+    --secondary: 310 80% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 15% 20%;
+    --muted-foreground: 280 40% 55%;
+
+    --accent: 310 80% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 280 50% 35%;
+    --input: 260 15% 20%;
+    --ring: 180 80% 65%;
+
+    --radius: 0.75rem;
+
+    --neon-glow: 180 80% 65%;
+    --neon-purple: 310 80% 65%;
+    --neon-pink: 330 90% 70%;
+
+    --font-display: 'Megrim', cursive;
+    --font-mono: 'VT323', monospace;
+  }
 }
 
 @layer base {
