@@ -3,6 +3,10 @@ import { useTheme, ThemeName } from "@/contexts/ThemeContext";
 const themes: { key: ThemeName; label: string }[] = [
   { key: "sci-fi", label: "Sci-Fi" },
   { key: "fantasy", label: "Fantasy" },
+  { key: "cyberpunk", label: "Cyberpunk" },
+  { key: "modern", label: "Modern" },
+  { key: "apocalypse", label: "Apocalypse" },
+  { key: "anime", label: "Anime" },
 ];
 
 const ThemeSwitcher = () => {
