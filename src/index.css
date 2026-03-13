@@ -441,8 +441,6 @@
   [data-theme="anime"] .neon-text-purple,
   [data-theme="anime"] .neon-text-pink {
     text-shadow: none;
-    -webkit-text-stroke: 2px hsl(var(--border));
-    paint-order: stroke fill;
   }
 
   [data-theme="anime"] .neon-box {
