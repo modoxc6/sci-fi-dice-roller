@@ -66,7 +66,7 @@ const Index = () => {
           {showResult && lastResult && (
             <div className="flex flex-col items-center animate-result-flash">
               <span className="font-display text-6xl md:text-7xl font-black neon-text">
-                {lastResult.result}
+                <AnimeText text={String(lastResult.result)} className="neon-text" />
               </span>
               <span className="font-display text-sm text-muted-foreground tracking-widest mt-1">
                 {dieLabel(lastResult.sides)}
