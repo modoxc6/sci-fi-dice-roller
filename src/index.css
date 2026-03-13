@@ -494,6 +494,38 @@
   [data-theme="anime"] .scanline {
     background: none;
   }
+
+  [data-theme="vaporwave"] .scanline {
+    background:
+      linear-gradient(180deg, transparent 50%, hsl(310 80% 65% / 0.03) 50%);
+    background-size: 100% 4px;
+  }
+
+  [data-theme="vaporwave"] .neon-text {
+    text-shadow:
+      0 0 10px hsl(180 80% 65% / 0.8),
+      0 0 30px hsl(310 80% 65% / 0.4),
+      0 0 60px hsl(180 80% 65% / 0.2);
+  }
+
+  [data-theme="vaporwave"] .neon-text-purple {
+    text-shadow:
+      0 0 10px hsl(310 80% 65% / 0.8),
+      0 0 30px hsl(310 80% 65% / 0.4);
+  }
+
+  [data-theme="vaporwave"] .neon-text-pink {
+    text-shadow:
+      0 0 10px hsl(330 90% 70% / 0.8),
+      0 0 30px hsl(330 90% 70% / 0.4);
+  }
+
+  [data-theme="vaporwave"] .neon-box {
+    box-shadow:
+      0 0 15px hsl(180 80% 65% / 0.2),
+      0 0 30px hsl(310 80% 65% / 0.1),
+      inset 0 0 15px hsl(310 80% 65% / 0.05);
+  }
 }
 
 @keyframes dice-roll {
