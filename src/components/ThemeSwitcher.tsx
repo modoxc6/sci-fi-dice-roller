@@ -8,6 +8,7 @@ const themes: { key: ThemeName; label: string }[] = [
   { key: "apocalypse", label: "Apocalypse" },
   { key: "anime", label: "Anime" },
   { key: "steampunk", label: "Steampunk" },
+  { key: "vaporwave", label: "Vaporwave" },
 ];
 
 const ThemeSwitcher = () => {

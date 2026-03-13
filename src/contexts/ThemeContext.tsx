@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-export type ThemeName = "sci-fi" | "fantasy" | "cyberpunk" | "modern" | "apocalypse" | "anime" | "steampunk";
+export type ThemeName = "sci-fi" | "fantasy" | "cyberpunk" | "modern" | "apocalypse" | "anime" | "steampunk" | "vaporwave";
 
 interface ThemeContextType {
   theme: ThemeName;
