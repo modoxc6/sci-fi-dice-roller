@@ -388,6 +388,7 @@
   [data-theme="fantasy"] .neon-text-purple,
   [data-theme="fantasy"] .neon-text-pink {
     text-shadow: none;
+    color: hsl(0 60% 30%);
   }
 
   [data-theme="apocalypse"] .neon-text,
