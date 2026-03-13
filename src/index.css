@@ -57,7 +57,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-mono;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     font-family: 'Share Tech Mono', monospace;
   }
 
