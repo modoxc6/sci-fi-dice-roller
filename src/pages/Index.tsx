@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DieButton from "@/components/DieButton";
 import RollLog, { RollEntry } from "@/components/RollLog";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const DICE = [4, 6, 8, 10, 12, 20, 100];
 
@@ -40,7 +41,10 @@ const Index = () => {
         }}
       />
 
-      <div className="relative z-10 flex flex-col items-center w-full max-w-2xl mx-auto px-4 py-12 gap-8">
+      <div className="relative z-10 flex flex-col items-center w-full max-w-2xl mx-auto px-4 py-6 gap-8">
+        {/* Theme switcher */}
+        <ThemeSwitcher />
+
         {/* Title */}
         <div className="text-center space-y-2">
           <h1 className="font-display text-4xl md:text-5xl font-black tracking-wider neon-text">
