@@ -372,6 +372,11 @@
   }
 
   [data-theme="fantasy"] .neon-text,
+  [data-theme="fantasy"] .neon-text-purple,
+  [data-theme="fantasy"] .neon-text-pink {
+    text-shadow: none;
+  }
+
   [data-theme="apocalypse"] .neon-text,
   [data-theme="steampunk"] .neon-text {
     text-shadow:
