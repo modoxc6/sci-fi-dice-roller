@@ -75,21 +75,26 @@ const Index = () => {
           )}
         </div>
 
-        {/* Dice grid */}
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-          {DICE.map((sides) => (
-            <DieButton
-              key={sides}
-              sides={sides}
-              onRoll={handleRoll}
-              isRolling={rollingDie === sides}
-              onStartRoll={handleStartRoll}
-            />
-          ))}
-        </div>
+        {/* Dice + Roll log side by side */}
+        <div className="w-full max-w-2xl flex gap-4 items-start">
+          {/* Dice column */}
+          <div className="flex flex-col gap-3">
+            {DICE.map((sides) => (
+              <DieButton
+                key={sides}
+                sides={sides}
+                onRoll={handleRoll}
+                isRolling={rollingDie === sides}
+                onStartRoll={handleStartRoll}
+              />
+            ))}
+          </div>
 
-        {/* Roll log */}
-        <RollLog entries={rollLog} onClear={() => setRollLog([])} />
+          {/* Roll log */}
+          <div className="flex-1">
+            <RollLog entries={rollLog} onClear={() => setRollLog([])} />
+          </div>
+        </div>
       </div>
     </div>
   );
