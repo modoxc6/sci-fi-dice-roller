@@ -76,11 +76,13 @@ const Index = () => {
         </div>
 
         {/* Quick Roll panel */}
-        <div className="w-full border border-border rounded-lg bg-card p-4">
-          <h2 className="font-display text-xs tracking-widest text-muted-foreground uppercase mb-3 text-center">
-            Quick Roll
-          </h2>
-          <div className="flex justify-center gap-2">
+        <div className="w-full border border-border rounded-lg bg-card neon-box overflow-hidden">
+          <div className="flex items-center justify-center px-4 py-3 border-b border-border">
+            <h2 className="font-display text-sm tracking-widest uppercase neon-text">
+              Quick Roll
+            </h2>
+          </div>
+          <div className="flex justify-between p-4">
             {DICE.map((sides) => (
               <DieButton
                 key={sides}
