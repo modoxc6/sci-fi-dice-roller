@@ -386,6 +386,11 @@
   }
 
   [data-theme="apocalypse"] .neon-text,
+  [data-theme="apocalypse"] .neon-text-purple,
+  [data-theme="apocalypse"] .neon-text-pink {
+    text-shadow: none;
+  }
+
   [data-theme="steampunk"] .neon-text {
     text-shadow:
       0 0 7px hsl(var(--primary) / 0.6),
