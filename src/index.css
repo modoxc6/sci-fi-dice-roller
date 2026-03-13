@@ -290,39 +290,39 @@
   }
 
   [data-theme="vaporwave"] {
-    --background: 260 25% 12%;
-    --foreground: 300 80% 85%;
+    --background: 270 30% 92%;
+    --foreground: 260 30% 30%;
 
-    --card: 260 20% 16%;
-    --card-foreground: 300 80% 85%;
+    --card: 280 35% 95%;
+    --card-foreground: 260 30% 30%;
 
-    --popover: 260 20% 16%;
-    --popover-foreground: 300 80% 85%;
+    --popover: 280 35% 95%;
+    --popover-foreground: 260 30% 30%;
 
-    --primary: 180 80% 65%;
-    --primary-foreground: 260 25% 10%;
+    --primary: 180 50% 70%;
+    --primary-foreground: 260 30% 20%;
 
-    --secondary: 310 80% 65%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 300 40% 75%;
+    --secondary-foreground: 260 30% 20%;
 
-    --muted: 260 15% 20%;
-    --muted-foreground: 280 40% 55%;
+    --muted: 270 25% 85%;
+    --muted-foreground: 260 20% 50%;
 
-    --accent: 310 80% 65%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 300 40% 75%;
+    --accent-foreground: 260 30% 20%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 50% 65%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 280 50% 35%;
-    --input: 260 15% 20%;
-    --ring: 180 80% 65%;
+    --border: 270 30% 78%;
+    --input: 270 25% 85%;
+    --ring: 180 50% 70%;
 
     --radius: 0.75rem;
 
-    --neon-glow: 180 80% 65%;
-    --neon-purple: 310 80% 65%;
-    --neon-pink: 330 90% 70%;
+    --neon-glow: 180 50% 70%;
+    --neon-purple: 300 40% 75%;
+    --neon-pink: 330 45% 75%;
 
     --font-display: 'Megrim', cursive;
     --font-mono: 'VT323', monospace;
@@ -496,35 +496,21 @@
   }
 
   [data-theme="vaporwave"] .scanline {
-    background:
-      linear-gradient(180deg, transparent 50%, hsl(310 80% 65% / 0.03) 50%);
-    background-size: 100% 4px;
+    background: none;
   }
 
-  [data-theme="vaporwave"] .neon-text {
-    text-shadow:
-      0 0 10px hsl(180 80% 65% / 0.8),
-      0 0 30px hsl(310 80% 65% / 0.4),
-      0 0 60px hsl(180 80% 65% / 0.2);
-  }
-
-  [data-theme="vaporwave"] .neon-text-purple {
-    text-shadow:
-      0 0 10px hsl(310 80% 65% / 0.8),
-      0 0 30px hsl(310 80% 65% / 0.4);
-  }
-
+  [data-theme="vaporwave"] .neon-text,
+  [data-theme="vaporwave"] .neon-text-purple,
   [data-theme="vaporwave"] .neon-text-pink {
-    text-shadow:
-      0 0 10px hsl(330 90% 70% / 0.8),
-      0 0 30px hsl(330 90% 70% / 0.4);
+    text-shadow: none;
   }
 
   [data-theme="vaporwave"] .neon-box {
-    box-shadow:
-      0 0 15px hsl(180 80% 65% / 0.2),
-      0 0 30px hsl(310 80% 65% / 0.1),
-      inset 0 0 15px hsl(310 80% 65% / 0.05);
+    box-shadow: none;
+  }
+
+  [data-theme="vaporwave"] .neon-border {
+    box-shadow: none;
   }
 }
 
