@@ -290,39 +290,39 @@
   }
 
   [data-theme="vaporwave"] {
-    --background: 270 30% 92%;
-    --foreground: 260 40% 18%;
+    --background: 150 60% 90%;
+    --foreground: 270 40% 25%;
 
-    --card: 280 35% 95%;
-    --card-foreground: 260 40% 18%;
+    --card: 200 70% 88%;
+    --card-foreground: 270 40% 25%;
 
-    --popover: 280 35% 95%;
-    --popover-foreground: 260 40% 18%;
+    --popover: 200 70% 88%;
+    --popover-foreground: 270 40% 25%;
 
-    --primary: 180 60% 40%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 270 55% 72%;
+    --primary-foreground: 270 40% 15%;
 
-    --secondary: 300 50% 55%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 320 60% 78%;
+    --secondary-foreground: 270 40% 15%;
 
-    --muted: 270 25% 85%;
-    --muted-foreground: 260 25% 40%;
+    --muted: 55 70% 88%;
+    --muted-foreground: 270 30% 40%;
 
-    --accent: 300 50% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 320 60% 78%;
+    --accent-foreground: 270 40% 15%;
 
     --destructive: 0 50% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 260 30% 60%;
-    --input: 270 25% 85%;
-    --ring: 180 60% 40%;
+    --border: 270 40% 55%;
+    --input: 200 70% 88%;
+    --ring: 270 55% 72%;
 
     --radius: 0.75rem;
 
-    --neon-glow: 180 60% 40%;
-    --neon-purple: 300 50% 55%;
-    --neon-pink: 330 50% 55%;
+    --neon-glow: 270 55% 72%;
+    --neon-purple: 320 60% 78%;
+    --neon-pink: 320 60% 78%;
 
     --font-display: 'Megrim', cursive;
     --font-mono: 'VT323', monospace;
