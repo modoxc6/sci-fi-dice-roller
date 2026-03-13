@@ -49,7 +49,7 @@ const Index = () => {
         {/* Title */}
         <div className="text-center space-y-2">
           <h1 className="font-display text-4xl md:text-5xl font-black tracking-wider neon-text">
-            ROLL OR DIE
+            <AnimeText text="ROLL OR DIE" className="neon-text" />
           </h1>
           <p className="font-mono text-sm text-muted-foreground tracking-widest uppercase">
             Select your fate
