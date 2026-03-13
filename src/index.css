@@ -366,7 +366,8 @@
 
   [data-theme="fantasy"] .scanline,
   [data-theme="modern"] .scanline,
-  [data-theme="apocalypse"] .scanline {
+  [data-theme="apocalypse"] .scanline,
+  [data-theme="steampunk"] .scanline {
     background: none;
   }
 
