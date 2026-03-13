@@ -207,39 +207,39 @@
   }
 
   [data-theme="anime"] {
-    --background: 260 30% 8%;
-    --foreground: 300 60% 90%;
+    --background: 60 30% 94%;
+    --foreground: 220 80% 20%;
 
-    --card: 260 25% 12%;
-    --card-foreground: 300 60% 90%;
+    --card: 60 25% 97%;
+    --card-foreground: 220 80% 20%;
 
-    --popover: 260 25% 12%;
-    --popover-foreground: 300 60% 90%;
+    --popover: 60 25% 97%;
+    --popover-foreground: 220 80% 20%;
 
-    --primary: 330 90% 65%;
-    --primary-foreground: 260 30% 8%;
+    --primary: 4 90% 58%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 190 90% 55%;
+    --secondary: 220 85% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 260 20% 16%;
-    --muted-foreground: 300 25% 50%;
+    --muted: 60 15% 88%;
+    --muted-foreground: 220 30% 40%;
 
-    --accent: 190 90% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 95% 55%;
+    --accent-foreground: 220 80% 20%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 300 30% 22%;
-    --input: 260 20% 16%;
-    --ring: 330 90% 65%;
+    --border: 220 60% 25%;
+    --input: 60 15% 88%;
+    --ring: 4 90% 58%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    --neon-glow: 330 90% 65%;
-    --neon-purple: 190 90% 55%;
-    --neon-pink: 330 90% 65%;
+    --neon-glow: 4 90% 58%;
+    --neon-purple: 220 85% 55%;
+    --neon-pink: 45 95% 55%;
 
     --font-display: 'M PLUS Rounded 1c', sans-serif;
     --font-mono: 'Zen Maru Gothic', sans-serif;
