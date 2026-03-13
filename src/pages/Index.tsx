@@ -2,6 +2,7 @@ import { useState } from "react";
 import DieButton from "@/components/DieButton";
 import RollLog, { RollEntry } from "@/components/RollLog";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import AnimeText from "@/components/AnimeText";
 
 const DICE = [4, 6, 8, 10, 12, 20, 100];
 
