@@ -244,6 +244,45 @@
     --font-display: 'M PLUS Rounded 1c', sans-serif;
     --font-mono: 'Zen Maru Gothic', sans-serif;
   }
+
+  [data-theme="steampunk"] {
+    --background: 30 30% 7%;
+    --foreground: 35 50% 75%;
+
+    --card: 30 25% 11%;
+    --card-foreground: 35 50% 75%;
+
+    --popover: 30 25% 11%;
+    --popover-foreground: 35 50% 75%;
+
+    --primary: 35 80% 50%;
+    --primary-foreground: 30 30% 7%;
+
+    --secondary: 25 60% 35%;
+    --secondary-foreground: 35 50% 85%;
+
+    --muted: 30 15% 16%;
+    --muted-foreground: 30 25% 45%;
+
+    --accent: 25 60% 35%;
+    --accent-foreground: 35 50% 85%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 35% 22%;
+    --input: 30 15% 16%;
+    --ring: 35 80% 50%;
+
+    --radius: 0.25rem;
+
+    --neon-glow: 35 80% 50%;
+    --neon-purple: 25 60% 35%;
+    --neon-pink: 25 60% 35%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-mono: 'Cutive Mono', monospace;
+  }
 }
 
 @layer base {
