@@ -2,7 +2,7 @@ import { useState } from "react";
 import DieButton from "@/components/DieButton";
 import RollLog, { RollEntry } from "@/components/RollLog";
 
-const DICE = [4, 6, 8, 12, 20, 100];
+const DICE = [4, 6, 8, 10, 12, 20, 100];
 
 const Index = () => {
   const [rollLog, setRollLog] = useState<RollEntry[]>([]);
