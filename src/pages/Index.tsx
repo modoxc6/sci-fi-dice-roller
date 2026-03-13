@@ -75,10 +75,12 @@ const Index = () => {
           )}
         </div>
 
-        {/* Dice + Roll log side by side */}
-        <div className="w-full max-w-2xl flex gap-4 items-start">
-          {/* Dice column */}
-          <div className="flex flex-col gap-3">
+        {/* Quick Roll panel */}
+        <div className="w-full border border-border rounded-lg bg-card p-4">
+          <h2 className="font-display text-xs tracking-widest text-muted-foreground uppercase mb-3 text-center">
+            Quick Roll
+          </h2>
+          <div className="flex justify-center gap-2">
             {DICE.map((sides) => (
               <DieButton
                 key={sides}
@@ -86,14 +88,15 @@ const Index = () => {
                 onRoll={handleRoll}
                 isRolling={rollingDie === sides}
                 onStartRoll={handleStartRoll}
+                compact
               />
             ))}
           </div>
+        </div>
 
-          {/* Roll log */}
-          <div className="flex-1">
-            <RollLog entries={rollLog} onClear={() => setRollLog([])} />
-          </div>
+        {/* Roll log */}
+        <div className="w-full">
+          <RollLog entries={rollLog} onClear={() => setRollLog([])} />
         </div>
       </div>
     </div>
