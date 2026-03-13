@@ -36,8 +36,8 @@ const DieButton = ({ sides, onRoll, isRolling, onStartRoll, compact }: DieButton
     }, 600);
   };
 
-  const svgSize = compact ? 36 : 64;
-  const fontSize = compact ? (sides === 100 ? "12" : "14") : (sides === 100 ? "18" : "22");
+  const svgSize = compact ? 48 : 64;
+  const fontSize = compact ? (sides === 100 ? "14" : "18") : (sides === 100 ? "18" : "22");
 
   return (
     <button

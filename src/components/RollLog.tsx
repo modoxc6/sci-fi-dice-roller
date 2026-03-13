@@ -14,7 +14,7 @@ const RollLog = ({ entries, onClear }: RollLogProps) => {
   const dieLabel = (sides: number) => (sides === 100 ? "d%" : `d${sides}`);
 
   return (
-    <div className="w-full max-w-md border border-border rounded-lg bg-card neon-box overflow-hidden">
+    <div className="w-full border border-border rounded-lg bg-card neon-box overflow-hidden">
       <div className="flex items-center justify-between px-4 py-3 border-b border-border">
         <h2 className="font-display text-sm tracking-widest uppercase neon-text">
           Roll Log
