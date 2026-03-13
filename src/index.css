@@ -291,38 +291,38 @@
 
   [data-theme="vaporwave"] {
     --background: 270 30% 92%;
-    --foreground: 260 30% 30%;
+    --foreground: 260 40% 18%;
 
     --card: 280 35% 95%;
-    --card-foreground: 260 30% 30%;
+    --card-foreground: 260 40% 18%;
 
     --popover: 280 35% 95%;
-    --popover-foreground: 260 30% 30%;
+    --popover-foreground: 260 40% 18%;
 
-    --primary: 180 50% 70%;
-    --primary-foreground: 260 30% 20%;
+    --primary: 180 60% 40%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 300 40% 75%;
-    --secondary-foreground: 260 30% 20%;
+    --secondary: 300 50% 55%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 270 25% 85%;
-    --muted-foreground: 260 20% 50%;
+    --muted-foreground: 260 25% 40%;
 
-    --accent: 300 40% 75%;
-    --accent-foreground: 260 30% 20%;
+    --accent: 300 50% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 50% 65%;
+    --destructive: 0 50% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 270 30% 78%;
+    --border: 260 30% 60%;
     --input: 270 25% 85%;
-    --ring: 180 50% 70%;
+    --ring: 180 60% 40%;
 
     --radius: 0.75rem;
 
-    --neon-glow: 180 50% 70%;
-    --neon-purple: 300 40% 75%;
-    --neon-pink: 330 45% 75%;
+    --neon-glow: 180 60% 40%;
+    --neon-purple: 300 50% 55%;
+    --neon-pink: 330 50% 55%;
 
     --font-display: 'Megrim', cursive;
     --font-mono: 'VT323', monospace;
