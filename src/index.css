@@ -91,13 +91,13 @@
 
   [data-theme="cyberpunk"] {
     --background: 270 30% 5%;
-    --foreground: 60 100% 80%;
+    --foreground: 320 80% 85%;
 
     --card: 270 25% 9%;
-    --card-foreground: 60 100% 80%;
+    --card-foreground: 320 80% 85%;
 
     --popover: 270 25% 9%;
-    --popover-foreground: 60 100% 80%;
+    --popover-foreground: 320 80% 85%;
 
     --primary: 320 100% 60%;
     --primary-foreground: 270 30% 5%;
