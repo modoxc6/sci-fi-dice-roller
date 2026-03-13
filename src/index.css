@@ -396,10 +396,10 @@
     text-shadow: none;
   }
 
-  [data-theme="steampunk"] .neon-text {
-    text-shadow:
-      0 0 7px hsl(var(--primary) / 0.6),
-      0 0 15px hsl(var(--primary) / 0.3);
+  [data-theme="steampunk"] .neon-text,
+  [data-theme="steampunk"] .neon-text-purple,
+  [data-theme="steampunk"] .neon-text-pink {
+    text-shadow: none;
   }
 
   [data-theme="fantasy"] .neon-box,
