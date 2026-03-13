@@ -91,38 +91,38 @@
 
   [data-theme="cyberpunk"] {
     --background: 270 30% 5%;
-    --foreground: 60 100% 80%;
+    --foreground: 320 80% 85%;
 
     --card: 270 25% 9%;
-    --card-foreground: 60 100% 80%;
+    --card-foreground: 320 80% 85%;
 
     --popover: 270 25% 9%;
-    --popover-foreground: 60 100% 80%;
+    --popover-foreground: 320 80% 85%;
 
-    --primary: 55 100% 55%;
+    --primary: 320 100% 60%;
     --primary-foreground: 270 30% 5%;
 
-    --secondary: 330 100% 55%;
+    --secondary: 280 80% 55%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 270 20% 15%;
-    --muted-foreground: 55 40% 50%;
+    --muted-foreground: 320 40% 50%;
 
-    --accent: 330 100% 55%;
+    --accent: 280 80% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 55 60% 20%;
+    --border: 280 60% 35%;
     --input: 270 20% 14%;
-    --ring: 55 100% 55%;
+    --ring: 320 100% 60%;
 
     --radius: 0.25rem;
 
-    --neon-glow: 55 100% 55%;
-    --neon-purple: 330 100% 55%;
-    --neon-pink: 330 100% 55%;
+    --neon-glow: 320 100% 60%;
+    --neon-purple: 280 80% 55%;
+    --neon-pink: 320 100% 60%;
 
     --font-display: 'Rajdhani', sans-serif;
     --font-mono: 'Fira Code', monospace;
