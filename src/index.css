@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=MedievalSharp&family=IM+Fell+English+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=MedievalSharp&family=IM+Fell+English+SC&family=Rajdhani:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Special+Elite&family=Courier+Prime&family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -88,6 +88,162 @@
     --font-display: 'MedievalSharp', cursive;
     --font-mono: 'IM Fell English SC', serif;
   }
+
+  [data-theme="cyberpunk"] {
+    --background: 270 30% 5%;
+    --foreground: 60 100% 80%;
+
+    --card: 270 25% 9%;
+    --card-foreground: 60 100% 80%;
+
+    --popover: 270 25% 9%;
+    --popover-foreground: 60 100% 80%;
+
+    --primary: 55 100% 55%;
+    --primary-foreground: 270 30% 5%;
+
+    --secondary: 330 100% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 270 20% 15%;
+    --muted-foreground: 55 40% 50%;
+
+    --accent: 330 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 55 60% 20%;
+    --input: 270 20% 14%;
+    --ring: 55 100% 55%;
+
+    --radius: 0.25rem;
+
+    --neon-glow: 55 100% 55%;
+    --neon-purple: 330 100% 55%;
+    --neon-pink: 330 100% 55%;
+
+    --font-display: 'Rajdhani', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+  }
+
+  [data-theme="modern"] {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 220 80% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 20% 25%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 220 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 92%;
+    --ring: 220 80% 55%;
+
+    --radius: 0.75rem;
+
+    --neon-glow: 220 80% 55%;
+    --neon-purple: 250 70% 55%;
+    --neon-pink: 340 75% 55%;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-mono: 'Inter', sans-serif;
+  }
+
+  [data-theme="apocalypse"] {
+    --background: 20 15% 6%;
+    --foreground: 30 20% 65%;
+
+    --card: 20 12% 10%;
+    --card-foreground: 30 20% 65%;
+
+    --popover: 20 12% 10%;
+    --popover-foreground: 30 20% 65%;
+
+    --primary: 25 90% 45%;
+    --primary-foreground: 20 15% 6%;
+
+    --secondary: 0 60% 40%;
+    --secondary-foreground: 30 20% 85%;
+
+    --muted: 20 10% 14%;
+    --muted-foreground: 25 15% 40%;
+
+    --accent: 0 60% 40%;
+    --accent-foreground: 30 20% 85%;
+
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 20% 18%;
+    --input: 20 10% 14%;
+    --ring: 25 90% 45%;
+
+    --radius: 0.25rem;
+
+    --neon-glow: 25 90% 45%;
+    --neon-purple: 0 60% 40%;
+    --neon-pink: 0 60% 40%;
+
+    --font-display: 'Special Elite', cursive;
+    --font-mono: 'Courier Prime', monospace;
+  }
+
+  [data-theme="anime"] {
+    --background: 260 30% 8%;
+    --foreground: 300 60% 90%;
+
+    --card: 260 25% 12%;
+    --card-foreground: 300 60% 90%;
+
+    --popover: 260 25% 12%;
+    --popover-foreground: 300 60% 90%;
+
+    --primary: 330 90% 65%;
+    --primary-foreground: 260 30% 8%;
+
+    --secondary: 190 90% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 20% 16%;
+    --muted-foreground: 300 25% 50%;
+
+    --accent: 190 90% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 300 30% 22%;
+    --input: 260 20% 16%;
+    --ring: 330 90% 65%;
+
+    --radius: 1rem;
+
+    --neon-glow: 330 90% 65%;
+    --neon-purple: 190 90% 55%;
+    --neon-pink: 330 90% 65%;
+
+    --font-display: 'M PLUS Rounded 1c', sans-serif;
+    --font-mono: 'Zen Maru Gothic', sans-serif;
+  }
 }
 
 @layer base {
@@ -169,21 +325,58 @@
     );
   }
 
-  [data-theme="fantasy"] .scanline {
+  [data-theme="fantasy"] .scanline,
+  [data-theme="modern"] .scanline,
+  [data-theme="apocalypse"] .scanline {
     background: none;
   }
 
-  [data-theme="fantasy"] .neon-text {
+  [data-theme="fantasy"] .neon-text,
+  [data-theme="apocalypse"] .neon-text {
     text-shadow:
       0 0 7px hsl(var(--primary) / 0.6),
       0 0 15px hsl(var(--primary) / 0.3);
   }
 
-  [data-theme="fantasy"] .neon-box {
+  [data-theme="fantasy"] .neon-box,
+  [data-theme="apocalypse"] .neon-box {
     box-shadow:
       0 0 8px hsl(var(--primary) / 0.2),
       0 0 15px hsl(var(--primary) / 0.08),
       inset 0 0 8px hsl(var(--primary) / 0.04);
+  }
+
+  [data-theme="modern"] .neon-text {
+    text-shadow: none;
+    color: hsl(var(--primary));
+    font-weight: 700;
+  }
+
+  [data-theme="modern"] .neon-text-purple {
+    text-shadow: none;
+    color: hsl(var(--neon-purple));
+  }
+
+  [data-theme="modern"] .neon-text-pink {
+    text-shadow: none;
+    color: hsl(var(--neon-pink));
+  }
+
+  [data-theme="modern"] .neon-box {
+    box-shadow:
+      0 1px 3px hsl(0 0% 0% / 0.1),
+      0 1px 2px hsl(0 0% 0% / 0.06);
+  }
+
+  [data-theme="modern"] .neon-border {
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3);
+  }
+
+  [data-theme="anime"] .neon-text {
+    text-shadow:
+      0 0 10px hsl(var(--primary) / 0.9),
+      0 0 20px hsl(var(--primary) / 0.5),
+      0 0 40px hsl(var(--primary) / 0.3);
   }
 }
 
