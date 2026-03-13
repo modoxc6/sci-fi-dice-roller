@@ -113,11 +113,11 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--font-display, 'Orbitron'), sans-serif;
   }
 
   .font-mono {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: var(--font-mono, 'Share Tech Mono'), monospace;
   }
 
   .neon-text {
