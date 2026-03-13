@@ -241,8 +241,13 @@
     --neon-purple: 220 85% 55%;
     --neon-pink: 45 95% 55%;
 
-    --font-display: 'M PLUS Rounded 1c', sans-serif;
+    --font-display: 'Bangers', cursive;
     --font-mono: 'Zen Maru Gothic', sans-serif;
+
+    --anime-red: 4 90% 55%;
+    --anime-yellow: 45 95% 50%;
+    --anime-blue: 220 85% 55%;
+    --anime-green: 145 80% 40%;
   }
 
   [data-theme="steampunk"] {
