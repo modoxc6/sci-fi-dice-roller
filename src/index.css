@@ -432,11 +432,34 @@
     box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3);
   }
 
-  [data-theme="anime"] .neon-text {
-    text-shadow:
-      0 0 10px hsl(var(--primary) / 0.9),
-      0 0 20px hsl(var(--primary) / 0.5),
-      0 0 40px hsl(var(--primary) / 0.3);
+  [data-theme="anime"] .neon-text,
+  [data-theme="anime"] .neon-text-purple,
+  [data-theme="anime"] .neon-text-pink {
+    text-shadow: none;
+  }
+
+  [data-theme="anime"] .neon-box {
+    box-shadow: none;
+    border: 3px solid hsl(var(--border));
+  }
+
+  [data-theme="anime"] .neon-border {
+    border: 3px solid hsl(var(--border));
+    box-shadow: none;
+  }
+
+  [data-theme="anime"] .scanline {
+    background: none;
+  }
+
+  [data-theme="anime"] button {
+    border: 3px solid hsl(var(--border));
+    font-weight: 800;
+  }
+
+  [data-theme="anime"] .border {
+    border-width: 3px;
+    border-color: hsl(var(--border));
   }
 }
 
