@@ -131,10 +131,12 @@ const Index = () => {
                   min={1}
                   max={99}
                   value={diceCounts[sides]}
+                  placeholder="1"
                   onChange={(e) =>
-                    setDiceCounts((prev) => ({ ...prev, [sides]: Math.max(1, parseInt(e.target.value) || 1) }))
+                    setDiceCounts((prev) => ({ ...prev, [sides]: e.target.value }))
                   }
-                  className="w-12 text-center text-xs font-display bg-background border border-border rounded-md py-1 text-foreground"
+                  className="w-12 text-center text-xs font-display border border-border rounded-md py-1 text-foreground"
+                  style={{ backgroundColor: 'hsl(var(--background))' }}
                 />
                 <button
                   onClick={() => handleMultiRoll(sides)}
