@@ -45,7 +45,7 @@ const RollLog = ({ entries, onClear }: RollLogProps) => {
                 style={{ animationDelay: `${i * 30}ms` }}
               >
                 <div className="flex items-center gap-3">
-                    <span className="font-display text-xs text-muted-foreground shrink-0">
+                    <span className="font-display text-xs text-muted-foreground max-w-[25%] break-words">
                     {entry.poolLabel ? entry.poolLabel : entry.count && entry.count > 1 ? `${entry.count}${dieLabel(entry.sides)}` : dieLabel(entry.sides)}
                    </span>
                   <span className="text-xs text-muted-foreground">
