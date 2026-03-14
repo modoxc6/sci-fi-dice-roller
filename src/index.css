@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=MedievalSharp&family=IM+Fell+English+SC&family=Rajdhani:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Special+Elite&family=Courier+Prime&family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&family=Cutive+Mono&family=Bangers&family=Megrim&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=MedievalSharp&family=IM+Fell+English+SC&family=Rajdhani:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Special+Elite&family=Courier+Prime&family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&family=Cutive+Mono&family=Bangers&family=Megrim&family=VT323&family=Pacifico&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -290,41 +290,41 @@
   }
 
   [data-theme="vaporwave"] {
-    --background: 285 50% 25%;
-    --foreground: 175 90% 70%;
+    --background: 260 35% 30%;
+    --foreground: 340 70% 82%;
 
-    --card: 285 45% 30%;
-    --card-foreground: 175 90% 70%;
+    --card: 260 30% 35%;
+    --card-foreground: 340 70% 82%;
 
-    --popover: 285 45% 30%;
-    --popover-foreground: 175 90% 70%;
+    --popover: 260 30% 35%;
+    --popover-foreground: 340 70% 82%;
 
-    --primary: 175 100% 55%;
-    --primary-foreground: 285 50% 15%;
+    --primary: 340 80% 72%;
+    --primary-foreground: 260 35% 18%;
 
-    --secondary: 320 100% 65%;
-    --secondary-foreground: 285 50% 15%;
+    --secondary: 200 40% 65%;
+    --secondary-foreground: 260 35% 18%;
 
-    --muted: 285 40% 32%;
-    --muted-foreground: 175 50% 50%;
+    --muted: 260 25% 38%;
+    --muted-foreground: 280 40% 60%;
 
-    --accent: 320 100% 65%;
-    --accent-foreground: 285 50% 15%;
+    --accent: 40 80% 80%;
+    --accent-foreground: 260 35% 18%;
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 320 80% 55%;
-    --input: 285 40% 32%;
-    --ring: 175 100% 55%;
+    --border: 280 45% 50%;
+    --input: 260 25% 38%;
+    --ring: 340 80% 72%;
 
     --radius: 0.75rem;
 
-    --neon-glow: 175 100% 55%;
-    --neon-purple: 285 60% 55%;
-    --neon-pink: 320 100% 65%;
+    --neon-glow: 340 80% 72%;
+    --neon-purple: 280 45% 55%;
+    --neon-pink: 340 80% 72%;
 
-    --font-display: 'Megrim', cursive;
+    --font-display: 'Pacifico', cursive;
     --font-mono: 'VT323', monospace;
   }
 }
