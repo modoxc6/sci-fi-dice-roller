@@ -4,6 +4,7 @@ export interface RollEntry {
   result: number;
   results?: number[];
   count?: number;
+  poolLabel?: string;
   timestamp: Date;
 }
 
@@ -45,8 +46,8 @@ const RollLog = ({ entries, onClear }: RollLogProps) => {
               >
                 <div className="flex items-center gap-3">
                     <span className="font-display text-xs text-muted-foreground w-14">
-                    {entry.count && entry.count > 1 ? `${entry.count}${dieLabel(entry.sides)}` : dieLabel(entry.sides)}
-                  </span>
+                    {entry.poolLabel ? entry.poolLabel : entry.count && entry.count > 1 ? `${entry.count}${dieLabel(entry.sides)}` : dieLabel(entry.sides)}
+                   </span>
                   <span className="text-xs text-muted-foreground">
                     {entry.timestamp.toLocaleTimeString()}
                   </span>
