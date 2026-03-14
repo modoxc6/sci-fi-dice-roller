@@ -15,7 +15,7 @@ const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="flex items-center gap-4 font-mono text-sm tracking-wider">
+    <div className="flex items-center gap-3 font-mono text-xs tracking-wider">
       {themes.map((t) => (
         <button
           key={t.key}
