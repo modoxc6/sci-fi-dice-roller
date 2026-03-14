@@ -38,7 +38,7 @@ const ThemeSwitcher = () => {
         <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
-        <div className="absolute left-1/2 -translate-x-1/2 mt-2 z-50 min-w-[140px] border border-border rounded-md bg-card neon-box py-1">
+        <div className="absolute left-1/2 -translate-x-1/2 mt-2 z-50 min-w-[140px] border border-border rounded-md neon-box py-1" style={{ backgroundColor: 'hsl(var(--card))' }}>
           {themes.map((t) => (
             <button
               key={t.key}
