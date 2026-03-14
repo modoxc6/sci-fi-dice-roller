@@ -33,7 +33,7 @@ const Index = () => {
   };
 
   const handleMultiRoll = (sides: number) => {
-    const count = Math.max(1, Math.min(99, diceCounts[sides] || 1));
+    const count = Math.max(1, Math.min(99, parseInt(diceCounts[sides]) || 1));
     if (count === 1) {
       handleStartRoll(sides);
       setTimeout(() => {
