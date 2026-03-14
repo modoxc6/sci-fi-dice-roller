@@ -185,6 +185,9 @@ const Index = () => {
           </div>
         </div>
 
+        {/* Dice Pool */}
+        <DicePool onRollPool={handlePoolRoll} isRolling={rollingDie !== null} />
+
         {/* Roll log */}
         <div className="w-full">
           <RollLog entries={rollLog} onClear={() => setRollLog([])} />
