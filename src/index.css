@@ -290,39 +290,39 @@
   }
 
   [data-theme="vaporwave"] {
-    --background: 330 70% 88%;
-    --foreground: 150 50% 25%;
+    --background: 285 50% 25%;
+    --foreground: 175 90% 70%;
 
-    --card: 330 65% 91%;
-    --card-foreground: 150 50% 25%;
+    --card: 285 45% 30%;
+    --card-foreground: 175 90% 70%;
 
-    --popover: 330 65% 91%;
-    --popover-foreground: 150 50% 25%;
+    --popover: 285 45% 30%;
+    --popover-foreground: 175 90% 70%;
 
-    --primary: 150 55% 35%;
-    --primary-foreground: 330 70% 92%;
+    --primary: 175 100% 55%;
+    --primary-foreground: 285 50% 15%;
 
-    --secondary: 265 50% 72%;
-    --secondary-foreground: 150 50% 18%;
+    --secondary: 320 100% 65%;
+    --secondary-foreground: 285 50% 15%;
 
-    --muted: 330 55% 83%;
-    --muted-foreground: 150 35% 35%;
+    --muted: 285 40% 32%;
+    --muted-foreground: 175 50% 50%;
 
-    --accent: 265 50% 72%;
-    --accent-foreground: 150 50% 18%;
+    --accent: 320 100% 65%;
+    --accent-foreground: 285 50% 15%;
 
-    --destructive: 0 50% 50%;
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 265 50% 65%;
-    --input: 330 55% 83%;
-    --ring: 150 55% 35%;
+    --border: 320 80% 55%;
+    --input: 285 40% 32%;
+    --ring: 175 100% 55%;
 
     --radius: 0.75rem;
 
-    --neon-glow: 150 55% 35%;
-    --neon-purple: 265 50% 65%;
-    --neon-pink: 330 60% 75%;
+    --neon-glow: 175 100% 55%;
+    --neon-purple: 285 60% 55%;
+    --neon-pink: 320 100% 65%;
 
     --font-display: 'Megrim', cursive;
     --font-mono: 'VT323', monospace;
