@@ -107,17 +107,12 @@ const Index = () => {
       />
 
       <div className="relative z-10 flex flex-col items-center w-full max-w-2xl mx-auto px-4 py-6 gap-8">
-        {/* Theme switcher */}
-        <ThemeSwitcher />
-
         {/* Title */}
         <div className="text-center space-y-2">
           <h1 className="font-display text-4xl md:text-5xl font-black tracking-wider neon-text">
             <AnimeText text="ROLL OR DIE" className="neon-text" />
           </h1>
-          <p className="font-mono text-sm text-muted-foreground tracking-widest uppercase">
-            Select your fate
-          </p>
+          <ThemeSwitcher />
         </div>
 
         {/* Result display */}
