@@ -51,9 +51,20 @@ const RollLog = ({ entries, onClear }: RollLogProps) => {
                     {entry.timestamp.toLocaleTimeString()}
                   </span>
                 </div>
-                <span className="font-display text-lg font-bold neon-text">
-                  {entry.result}
-                </span>
+                {entry.results && entry.results.length > 1 ? (
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-muted-foreground">
+                      [{entry.results.join(", ")}]
+                    </span>
+                    <span className="font-display text-lg font-bold neon-text">
+                      = {entry.result}
+                    </span>
+                  </div>
+                ) : (
+                  <span className="font-display text-lg font-bold neon-text">
+                    {entry.result}
+                  </span>
+                )}
               </li>
             ))}
           </ul>
