@@ -2,6 +2,8 @@ export interface RollEntry {
   id: number;
   sides: number;
   result: number;
+  results?: number[];
+  count?: number;
   timestamp: Date;
 }
 
@@ -42,16 +44,27 @@ const RollLog = ({ entries, onClear }: RollLogProps) => {
                 style={{ animationDelay: `${i * 30}ms` }}
               >
                 <div className="flex items-center gap-3">
-                  <span className="font-display text-xs text-muted-foreground w-10">
-                    {dieLabel(entry.sides)}
+                    <span className="font-display text-xs text-muted-foreground w-14">
+                    {entry.count && entry.count > 1 ? `${entry.count}${dieLabel(entry.sides)}` : dieLabel(entry.sides)}
                   </span>
                   <span className="text-xs text-muted-foreground">
                     {entry.timestamp.toLocaleTimeString()}
                   </span>
                 </div>
-                <span className="font-display text-lg font-bold neon-text">
-                  {entry.result}
-                </span>
+                {entry.results && entry.results.length > 1 ? (
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-muted-foreground">
+                      [{entry.results.join(", ")}]
+                    </span>
+                    <span className="font-display text-lg font-bold neon-text">
+                      = {entry.result}
+                    </span>
+                  </div>
+                ) : (
+                  <span className="font-display text-lg font-bold neon-text">
+                    {entry.result}
+                  </span>
+                )}
               </li>
             ))}
           </ul>

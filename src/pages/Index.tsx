@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import DieButton from "@/components/DieButton";
 import RollLog, { RollEntry } from "@/components/RollLog";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import AnimeText from "@/components/AnimeText";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const DICE = [4, 6, 8, 10, 12, 20, 100];
 
@@ -11,7 +13,8 @@ const Index = () => {
   const [lastResult, setLastResult] = useState<{ sides: number; result: number } | null>(null);
   const [rollingDie, setRollingDie] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
-  let nextId = rollLog.length > 0 ? rollLog[0].id + 1 : 1;
+  const [selectedDie, setSelectedDie] = useState<number>(20);
+  const [diceCount, setDiceCount] = useState<number>(1);
 
   const handleStartRoll = (sides: number) => {
     setRollingDie(sides);
@@ -26,6 +29,23 @@ const Index = () => {
       { id: (prev[0]?.id ?? 0) + 1, sides, result, timestamp: new Date() },
       ...prev.slice(0, 49),
     ]);
+  };
+
+  const handleMultiRoll = () => {
+    const count = Math.max(1, Math.min(99, diceCount));
+    setRollingDie(selectedDie);
+    setShowResult(false);
+    setTimeout(() => {
+      const results = Array.from({ length: count }, () => Math.floor(Math.random() * selectedDie) + 1);
+      const total = results.reduce((a, b) => a + b, 0);
+      setLastResult({ sides: selectedDie, result: total });
+      setShowResult(true);
+      setRollingDie(null);
+      setRollLog((prev) => [
+        { id: (prev[0]?.id ?? 0) + 1, sides: selectedDie, result: total, results, count, timestamp: new Date() },
+        ...prev.slice(0, 49),
+      ]);
+    }, 600);
   };
 
   const dieLabel = (sides: number) => (sides === 100 ? "d%" : `d${sides}`);
@@ -98,6 +118,33 @@ const Index = () => {
                 compact
               />
             ))}
+          </div>
+          <div className="flex items-center gap-3 px-4 pb-4">
+            <Input
+              type="number"
+              min={1}
+              max={99}
+              value={diceCount}
+              onChange={(e) => setDiceCount(Math.max(1, parseInt(e.target.value) || 1))}
+              className="w-20 text-center font-display bg-background border-border"
+            />
+            <span className="font-display text-xs text-muted-foreground tracking-wider">×</span>
+            <select
+              value={selectedDie}
+              onChange={(e) => setSelectedDie(Number(e.target.value))}
+              className="font-display text-xs tracking-wider bg-background border border-border rounded-md px-2 py-2 text-foreground"
+            >
+              {DICE.map((s) => (
+                <option key={s} value={s}>{s === 100 ? "d%" : `d${s}`}</option>
+              ))}
+            </select>
+            <Button
+              onClick={handleMultiRoll}
+              disabled={rollingDie !== null}
+              className="flex-1 font-display tracking-widest uppercase text-xs"
+            >
+              Roll
+            </Button>
           </div>
         </div>
 
