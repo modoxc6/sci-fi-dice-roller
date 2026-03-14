@@ -31,6 +31,23 @@ const Index = () => {
     ]);
   };
 
+  const handleMultiRoll = () => {
+    const count = Math.max(1, Math.min(99, diceCount));
+    setRollingDie(selectedDie);
+    setShowResult(false);
+    setTimeout(() => {
+      const results = Array.from({ length: count }, () => Math.floor(Math.random() * selectedDie) + 1);
+      const total = results.reduce((a, b) => a + b, 0);
+      setLastResult({ sides: selectedDie, result: total });
+      setShowResult(true);
+      setRollingDie(null);
+      setRollLog((prev) => [
+        { id: (prev[0]?.id ?? 0) + 1, sides: selectedDie, result: total, results, count, timestamp: new Date() },
+        ...prev.slice(0, 49),
+      ]);
+    }, 600);
+  };
+
   const dieLabel = (sides: number) => (sides === 100 ? "d%" : `d${sides}`);
 
   return (
