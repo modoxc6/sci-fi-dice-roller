@@ -2,6 +2,8 @@ export interface RollEntry {
   id: number;
   sides: number;
   result: number;
+  results?: number[];
+  count?: number;
   timestamp: Date;
 }
 
