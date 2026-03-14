@@ -4,6 +4,7 @@ export interface RollEntry {
   result: number;
   results?: number[];
   count?: number;
+  poolLabel?: string;
   timestamp: Date;
 }
 
