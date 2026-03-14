@@ -13,8 +13,9 @@ const Index = () => {
   const [lastResult, setLastResult] = useState<{ sides: number; result: number } | null>(null);
   const [rollingDie, setRollingDie] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
-  const [selectedDie, setSelectedDie] = useState<number>(20);
-  const [diceCount, setDiceCount] = useState<number>(1);
+  const [diceCounts, setDiceCounts] = useState<Record<number, number>>(
+    Object.fromEntries(DICE.map((d) => [d, 1]))
+  );
 
   const handleStartRoll = (sides: number) => {
     setRollingDie(sides);
