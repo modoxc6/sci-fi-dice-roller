@@ -118,42 +118,33 @@ const Index = () => {
           </div>
           <div className="flex justify-between p-4">
             {DICE.map((sides) => (
-              <DieButton
-                key={sides}
-                sides={sides}
-                onRoll={handleRoll}
-                isRolling={rollingDie === sides}
-                onStartRoll={handleStartRoll}
-                compact
-              />
+              <div key={sides} className="flex flex-col items-center gap-2">
+                <DieButton
+                  sides={sides}
+                  onRoll={handleRoll}
+                  isRolling={rollingDie === sides}
+                  onStartRoll={handleStartRoll}
+                  compact
+                />
+                <input
+                  type="number"
+                  min={1}
+                  max={99}
+                  value={diceCounts[sides]}
+                  onChange={(e) =>
+                    setDiceCounts((prev) => ({ ...prev, [sides]: Math.max(1, parseInt(e.target.value) || 1) }))
+                  }
+                  className="w-12 text-center text-xs font-display bg-background border border-border rounded-md py-1 text-foreground"
+                />
+                <button
+                  onClick={() => handleMultiRoll(sides)}
+                  disabled={rollingDie !== null}
+                  className="font-display text-[10px] tracking-wider uppercase px-2 py-1 rounded border border-border bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  Roll
+                </button>
+              </div>
             ))}
-          </div>
-          <div className="flex items-center gap-3 px-4 pb-4">
-            <Input
-              type="number"
-              min={1}
-              max={99}
-              value={diceCount}
-              onChange={(e) => setDiceCount(Math.max(1, parseInt(e.target.value) || 1))}
-              className="w-20 text-center font-display bg-background border-border"
-            />
-            <span className="font-display text-xs text-muted-foreground tracking-wider">×</span>
-            <select
-              value={selectedDie}
-              onChange={(e) => setSelectedDie(Number(e.target.value))}
-              className="font-display text-xs tracking-wider bg-background border border-border rounded-md px-2 py-2 text-foreground"
-            >
-              {DICE.map((s) => (
-                <option key={s} value={s}>{s === 100 ? "d%" : `d${s}`}</option>
-              ))}
-            </select>
-            <Button
-              onClick={handleMultiRoll}
-              disabled={rollingDie !== null}
-              className="flex-1 font-display tracking-widest uppercase text-xs"
-            >
-              Roll
-            </Button>
           </div>
         </div>
 
