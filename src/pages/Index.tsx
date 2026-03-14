@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import DieButton from "@/components/DieButton";
 import RollLog, { RollEntry } from "@/components/RollLog";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import AnimeText from "@/components/AnimeText";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const DICE = [4, 6, 8, 10, 12, 20, 100];
 
@@ -11,7 +13,8 @@ const Index = () => {
   const [lastResult, setLastResult] = useState<{ sides: number; result: number } | null>(null);
   const [rollingDie, setRollingDie] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
-  let nextId = rollLog.length > 0 ? rollLog[0].id + 1 : 1;
+  const [selectedDie, setSelectedDie] = useState<number>(20);
+  const [diceCount, setDiceCount] = useState<number>(1);
 
   const handleStartRoll = (sides: number) => {
     setRollingDie(sides);
