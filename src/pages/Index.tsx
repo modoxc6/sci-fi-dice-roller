@@ -58,6 +58,40 @@ const Index = () => {
     }, 600);
   };
 
+  const handlePoolRoll = (pool: number[]) => {
+    setRollingDie(-1); // use -1 to indicate pool rolling
+    setShowResult(false);
+    setTimeout(() => {
+      const results = pool.map((sides) => ({
+        sides,
+        value: Math.floor(Math.random() * sides) + 1,
+      }));
+      const total = results.reduce((a, b) => a + b.value, 0);
+      const poolLabel = pool.reduce((acc, s) => {
+        acc[s] = (acc[s] || 0) + 1;
+        return acc;
+      }, {} as Record<number, number>);
+      const labelStr = Object.entries(poolLabel)
+        .map(([s, c]) => `${c}${dieLabel(Number(s))}`)
+        .join("+");
+      setLastResult({ sides: 0, result: total });
+      setShowResult(true);
+      setRollingDie(null);
+      setRollLog((prev) => [
+        {
+          id: (prev[0]?.id ?? 0) + 1,
+          sides: 0,
+          result: total,
+          results: results.map((r) => r.value),
+          count: pool.length,
+          poolLabel: labelStr,
+          timestamp: new Date(),
+        },
+        ...prev.slice(0, 49),
+      ]);
+    }, 600);
+  };
+
   const dieLabel = (sides: number) => (sides === 100 ? "d%" : `d${sides}`);
 
   return (
