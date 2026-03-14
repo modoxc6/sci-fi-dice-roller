@@ -119,6 +119,33 @@ const Index = () => {
               />
             ))}
           </div>
+          <div className="flex items-center gap-3 px-4 pb-4">
+            <Input
+              type="number"
+              min={1}
+              max={99}
+              value={diceCount}
+              onChange={(e) => setDiceCount(Math.max(1, parseInt(e.target.value) || 1))}
+              className="w-20 text-center font-display bg-background border-border"
+            />
+            <span className="font-display text-xs text-muted-foreground tracking-wider">×</span>
+            <select
+              value={selectedDie}
+              onChange={(e) => setSelectedDie(Number(e.target.value))}
+              className="font-display text-xs tracking-wider bg-background border border-border rounded-md px-2 py-2 text-foreground"
+            >
+              {DICE.map((s) => (
+                <option key={s} value={s}>{s === 100 ? "d%" : `d${s}`}</option>
+              ))}
+            </select>
+            <Button
+              onClick={handleMultiRoll}
+              disabled={rollingDie !== null}
+              className="flex-1 font-display tracking-widest uppercase text-xs"
+            >
+              Roll
+            </Button>
+          </div>
         </div>
 
         {/* Roll log */}
