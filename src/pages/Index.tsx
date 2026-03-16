@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import DieButton from "@/components/DieButton";
 import DicePool from "@/components/DicePool";
 import RollLog, { RollEntry } from "@/components/RollLog";
