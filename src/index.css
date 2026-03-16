@@ -538,3 +538,47 @@
   0%, 100% { box-shadow: 0 0 5px hsl(var(--primary) / 0.3); }
   50% { box-shadow: 0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.3); }
 }
+
+/* Deathmatch Island — fixed color scheme matching the game book */
+.dmi-theme {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 15%;
+  --card: 0 0% 98%;
+  --card-foreground: 0 0% 15%;
+  --primary: 8 85% 58%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 90%;
+  --secondary-foreground: 0 0% 15%;
+  --muted: 0 0% 94%;
+  --muted-foreground: 0 0% 50%;
+  --accent: 8 85% 58%;
+  --accent-foreground: 0 0% 100%;
+  --border: 0 0% 85%;
+  --input: 0 0% 94%;
+  --ring: 8 85% 58%;
+  --neon-glow: 8 85% 58%;
+  --neon-purple: 8 85% 58%;
+  --neon-pink: 8 85% 58%;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'Inter', sans-serif;
+  background-color: hsl(0 0% 100%) !important;
+  color: hsl(0 0% 15%) !important;
+}
+
+.dmi-theme .neon-text,
+.dmi-theme .neon-text-purple,
+.dmi-theme .neon-text-pink {
+  text-shadow: none !important;
+}
+
+.dmi-theme .neon-box {
+  box-shadow: none !important;
+}
+
+.dmi-theme .neon-border {
+  box-shadow: none !important;
+}
+
+.dmi-theme .scanline {
+  background: none !important;
+}

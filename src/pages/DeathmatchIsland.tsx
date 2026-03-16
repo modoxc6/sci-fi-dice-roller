@@ -92,7 +92,7 @@ const DeathmatchIsland = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen dmi-theme">
       {/* Top bar */}
       <div className="w-full border-b border-border px-6 py-3 flex items-center justify-between">
         <Link
