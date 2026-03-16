@@ -92,17 +92,17 @@ const DeathmatchIsland = () => {
   };
 
   return (
-    <div className="min-h-screen dmi-theme">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Top bar */}
-      <div className="w-full border-b border-border px-6 py-3 flex items-center justify-between">
+      <div className="w-full border-b border-gray-200 px-6 py-3 flex items-center justify-between">
         <Link
           to="/"
-          className="flex items-center gap-2 text-xs tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors font-display"
+          className="flex items-center gap-2 text-xs tracking-widest uppercase text-gray-500 hover:text-gray-900 transition-colors font-display"
         >
           <ArrowLeft className="w-4 h-4" />
           Roll or Die
         </Link>
-        <span className="font-display text-xs tracking-widest uppercase text-muted-foreground">
+        <span className="font-display text-xs tracking-widest uppercase text-gray-500">
           Deathmatch Island
         </span>
       </div>
@@ -111,20 +111,20 @@ const DeathmatchIsland = () => {
         {phase === "build" && (
           <div className="flex flex-col items-center">
             {/* Title box — dashed border like reference */}
-            <div className="w-full border-2 border-dashed border-primary/40 rounded-lg px-6 py-4 text-center">
-              <h1 className="font-display text-2xl md:text-3xl font-black tracking-wider text-primary">
+            <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-4 text-center">
+              <h1 className="font-display text-2xl md:text-3xl font-black tracking-wider text-dmi-accent">
                 Deathmatch Island
               </h1>
-              <p className="text-xs text-muted-foreground mt-1 uppercase tracking-widest">Roll Builder</p>
+              <p className="text-xs text-gray-500 mt-1 uppercase tracking-widest">Roll Builder</p>
             </div>
 
             <VerticalArrow />
 
             {/* Pool 1 container */}
-            <div className="w-full border-2 border-foreground/20 rounded-lg overflow-hidden">
-              <div className="px-6 py-3 border-b border-foreground/10">
-                <h2 className="font-display text-lg font-bold tracking-wider text-foreground">Pool One</h2>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-widest">Action — Sum of top 2 dice</p>
+            <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
+              <div className="px-6 py-3 border-b border-gray-100">
+                <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool One</h2>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest">Action — Sum of top 2 dice</p>
               </div>
               <div className="px-4 py-4 space-y-0">
                 {STEPS.filter((s) => s.pool === 1).map((step, i, arr) => (
@@ -137,7 +137,7 @@ const DeathmatchIsland = () => {
                     />
                     {i < arr.length - 1 && (
                       <div className="flex justify-center py-1">
-                        <div className="w-px h-4 bg-foreground/15" />
+                        <div className="w-px h-4 bg-gray-200" />
                       </div>
                     )}
                   </div>
@@ -148,10 +148,10 @@ const DeathmatchIsland = () => {
             <VerticalArrow />
 
             {/* Pool 2 container */}
-            <div className="w-full border-2 border-foreground/20 rounded-lg overflow-hidden">
-              <div className="px-6 py-3 border-b border-foreground/10">
-                <h2 className="font-display text-lg font-bold tracking-wider text-foreground">Pool Two</h2>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-widest">Acquisition — Highest single die</p>
+            <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
+              <div className="px-6 py-3 border-b border-gray-100">
+                <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool Two</h2>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest">Acquisition — Highest single die</p>
               </div>
               <div className="px-4 py-4">
                 {STEPS.filter((s) => s.pool === 2).map((step) => (
@@ -175,8 +175,8 @@ const DeathmatchIsland = () => {
               className={`
                 w-full py-4 rounded-lg font-display text-lg font-bold tracking-widest uppercase transition-all
                 ${canRoll()
-                  ? "bg-primary text-primary-foreground hover:opacity-90 cursor-pointer"
-                  : "bg-muted text-muted-foreground cursor-not-allowed"
+                  ? "bg-dmi-accent text-dmi-accent-foreground hover:opacity-90 cursor-pointer"
+                  : "bg-gray-200 text-gray-400 cursor-not-allowed"
                 }
               `}
             >
@@ -184,7 +184,7 @@ const DeathmatchIsland = () => {
             </button>
 
             {!canRoll() && (
-              <p className="text-xs text-muted-foreground mt-2 text-center">
+              <p className="text-xs text-gray-500 mt-2 text-center">
                 Select dice for all required steps (Name, Capability)
               </p>
             )}
@@ -193,14 +193,14 @@ const DeathmatchIsland = () => {
 
         {phase === "rolling" && (
           <div className="flex flex-col items-center justify-center h-64 gap-4">
-            <div className="font-display text-2xl text-primary animate-pulse tracking-wider">
+            <div className="font-display text-2xl text-dmi-accent animate-pulse tracking-wider">
               Rolling dice...
             </div>
             <div className="flex gap-2">
               {[...Array(5)].map((_, i) => (
                 <div
                   key={i}
-                  className="w-3 h-3 rounded-sm bg-primary animate-bounce"
+                  className="w-3 h-3 rounded-sm bg-dmi-accent animate-bounce"
                   style={{ animationDelay: `${i * 100}ms` }}
                 />
               ))}
@@ -220,8 +220,8 @@ const DeathmatchIsland = () => {
 function VerticalArrow() {
   return (
     <div className="flex flex-col items-center py-1">
-      <div className="w-px h-4 bg-foreground/20" />
-      <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-foreground/20" />
+      <div className="w-px h-4 bg-gray-300" />
+      <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-gray-300" />
     </div>
   );
 }
@@ -245,37 +245,37 @@ function StepRow({
       className={`rounded-lg border-2 transition-all px-4 py-3 ${
         step.mandatory
           ? hasSelection
-            ? "border-primary bg-primary/10"
-            : "border-primary/40 bg-card"
+            ? "border-dmi-accent bg-dmi-accent/10"
+            : "border-dmi-accent/40 bg-gray-50"
           : hasSelection
-            ? "border-foreground/20 bg-primary/10"
-            : "border-dashed border-foreground/15 bg-card"
+            ? "border-gray-200 bg-dmi-accent/10"
+            : "border-dashed border-gray-200 bg-gray-50"
       }`}
     >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
-          <h3 className={`font-display text-sm font-bold tracking-wider ${hasSelection ? "text-primary" : "text-foreground"}`}>
+          <h3 className={`font-display text-sm font-bold tracking-wider ${hasSelection ? "text-dmi-accent" : "text-gray-900"}`}>
             {step.label}
           </h3>
           {step.mandatory ? (
-            <span className="text-[9px] uppercase tracking-widest bg-primary text-primary-foreground px-1.5 py-0.5 rounded font-display font-bold">
+            <span className="text-[9px] uppercase tracking-widest bg-dmi-accent text-dmi-accent-foreground px-1.5 py-0.5 rounded font-display font-bold">
               Required
             </span>
           ) : (
-            <span className="text-[9px] uppercase tracking-widest text-muted-foreground font-display">
+            <span className="text-[9px] uppercase tracking-widest text-gray-500 font-display">
               Optional
             </span>
           )}
         </div>
         {hasSelection && !step.multi && (
-          <span className="font-display text-sm font-bold text-primary">{dieLabel(selected[0])}</span>
+          <span className="font-display text-sm font-bold text-dmi-accent">{dieLabel(selected[0])}</span>
         )}
       </div>
 
       {step.guidance && (
         <div className="flex items-start gap-1.5 mb-2">
-          <Info className="w-3 h-3 text-muted-foreground shrink-0 mt-0.5" />
-          <p className="text-[11px] text-muted-foreground italic">{step.guidance}</p>
+          <Info className="w-3 h-3 text-gray-400 shrink-0 mt-0.5" />
+          <p className="text-[11px] text-gray-500 italic">{step.guidance}</p>
         </div>
       )}
 
@@ -290,8 +290,8 @@ function StepRow({
               className={`
                 px-3 py-1.5 rounded text-xs font-display font-bold tracking-wider transition-all
                 ${isSelected
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-muted/50 border border-foreground/10 text-foreground hover:border-primary/50 hover:bg-primary/5"
+                  ? "bg-dmi-accent text-dmi-accent-foreground"
+                  : "bg-gray-100 border border-gray-200 text-gray-900 hover:border-dmi-accent/50 hover:bg-dmi-accent/5"
                 }
               `}
             >
@@ -308,7 +308,7 @@ function StepRow({
             <span
               key={i}
               onClick={() => onRemove(i)}
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary text-primary-foreground text-xs font-display cursor-pointer hover:opacity-80 transition-opacity"
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-dmi-accent text-dmi-accent-foreground text-xs font-display cursor-pointer hover:opacity-80 transition-opacity"
             >
               {dieLabel(die)}
               <X className="w-3 h-3" />
@@ -338,28 +338,28 @@ function ResultsSummary({
   return (
     <div className="flex flex-col items-center gap-6">
       {/* Total — big dashed box */}
-      <div className="w-full border-2 border-dashed border-primary/40 rounded-lg px-6 py-6 text-center">
-        <p className="text-[10px] text-muted-foreground uppercase tracking-widest mb-1">Total Score</p>
-        <div className="font-display text-7xl md:text-8xl font-black text-primary">
+      <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-6 text-center">
+        <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Total Score</p>
+        <div className="font-display text-7xl md:text-8xl font-black text-dmi-accent">
           {rollResults.total}
         </div>
-        <div className="flex items-center justify-center gap-3 mt-2 text-sm text-muted-foreground font-display">
-          <span className="text-primary font-bold">{rollResults.pool1Result}</span>
+        <div className="flex items-center justify-center gap-3 mt-2 text-sm text-gray-500 font-display">
+          <span className="text-dmi-accent font-bold">{rollResults.pool1Result}</span>
           <span>+</span>
-          <span className="text-foreground font-bold">{rollResults.pool2Result}</span>
+          <span className="text-gray-900 font-bold">{rollResults.pool2Result}</span>
         </div>
       </div>
 
       <VerticalArrow />
 
       {/* Pool 1 result */}
-      <div className="w-full border-2 border-foreground/20 rounded-lg overflow-hidden">
-        <div className="px-6 py-3 border-b border-foreground/10 flex items-center justify-between">
+      <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
+        <div className="px-6 py-3 border-b border-gray-100 flex items-center justify-between">
           <div>
-            <h2 className="font-display text-lg font-bold tracking-wider text-foreground">Pool One</h2>
-            <p className="text-[10px] text-muted-foreground uppercase tracking-widest">Sum of top 2 dice</p>
+            <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool One</h2>
+            <p className="text-[10px] text-gray-500 uppercase tracking-widest">Sum of top 2 dice</p>
           </div>
-          <span className="font-display text-2xl font-black text-primary">= {rollResults.pool1Result}</span>
+          <span className="font-display text-2xl font-black text-dmi-accent">= {rollResults.pool1Result}</span>
         </div>
         <div className="px-6 py-4 flex flex-wrap gap-2">
           {pool1Sorted.map((val, i) => (
@@ -367,8 +367,8 @@ function ResultsSummary({
               key={i}
               className={`inline-flex items-center justify-center w-12 h-12 rounded-lg font-display font-bold text-sm transition-all
                 ${i < 2
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground line-through opacity-50"
+                  ? "bg-dmi-accent text-dmi-accent-foreground"
+                  : "bg-gray-200 text-gray-400 line-through opacity-50"
                 }`}
             >
               {val}
@@ -382,13 +382,13 @@ function ResultsSummary({
           <VerticalArrow />
 
           {/* Pool 2 result */}
-          <div className="w-full border-2 border-foreground/20 rounded-lg overflow-hidden">
-            <div className="px-6 py-3 border-b border-foreground/10 flex items-center justify-between">
+          <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
+            <div className="px-6 py-3 border-b border-gray-100 flex items-center justify-between">
               <div>
-                <h2 className="font-display text-lg font-bold tracking-wider text-foreground">Pool Two</h2>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-widest">Highest single die</p>
+                <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool Two</h2>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest">Highest single die</p>
               </div>
-              <span className="font-display text-2xl font-black text-primary">= {rollResults.pool2Result}</span>
+              <span className="font-display text-2xl font-black text-dmi-accent">= {rollResults.pool2Result}</span>
             </div>
             <div className="px-6 py-4 flex flex-wrap gap-2">
               {pool2Sorted.map((val, i) => (
@@ -396,8 +396,8 @@ function ResultsSummary({
                   key={i}
                   className={`inline-flex items-center justify-center w-12 h-12 rounded-lg font-display font-bold text-sm
                     ${i === 0
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted text-muted-foreground line-through opacity-50"
+                      ? "bg-dmi-accent text-dmi-accent-foreground"
+                      : "bg-gray-200 text-gray-400 line-through opacity-50"
                     }`}
                 >
                   {val}
@@ -414,14 +414,14 @@ function ResultsSummary({
       <div className="flex gap-4 w-full">
         <button
           onClick={onReroll}
-          className="flex-1 py-3 rounded-lg border-2 border-dashed border-foreground/20 font-display text-sm font-bold tracking-widest uppercase text-foreground hover:border-primary/40 transition-all flex items-center justify-center gap-2"
+          className="flex-1 py-3 rounded-lg border-2 border-dashed border-gray-300 font-display text-sm font-bold tracking-widest uppercase text-gray-900 hover:border-dmi-accent/40 transition-all flex items-center justify-center gap-2"
         >
           <RotateCcw className="w-4 h-4" />
           Re-Roll
         </button>
         <button
           onClick={onReset}
-          className="flex-1 py-3 rounded-lg bg-primary text-primary-foreground font-display text-sm font-bold tracking-widest uppercase hover:opacity-90 transition-all flex items-center justify-center gap-2"
+          className="flex-1 py-3 rounded-lg bg-dmi-accent text-dmi-accent-foreground font-display text-sm font-bold tracking-widest uppercase hover:opacity-90 transition-all flex items-center justify-center gap-2"
         >
           <ArrowLeft className="w-4 h-4" />
           New Roll
