@@ -188,6 +188,23 @@ const Index = () => {
         <div className="w-full">
           <RollLog entries={rollLog} onClear={() => setRollLog([])} />
         </div>
+
+        {/* Game-specific rollers */}
+        <div className="w-full border border-border rounded-lg bg-card neon-box overflow-hidden">
+          <div className="flex items-center justify-center px-4 py-3 border-b border-border">
+            <h2 className="font-display text-sm tracking-widest uppercase neon-text">
+              Game Rollers
+            </h2>
+          </div>
+          <div className="p-4 flex justify-center">
+            <Link
+              to="/deathmatch-island"
+              className="font-display text-xs tracking-wider uppercase px-4 py-2 rounded border border-border bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Deathmatch Island
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
