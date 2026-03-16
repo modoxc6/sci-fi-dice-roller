@@ -92,25 +92,7 @@ const DeathmatchIsland = () => {
   };
 
   return (
-    <div
-      className="min-h-screen dmi-theme"
-      style={{
-        '--background': '0 0% 100%',
-        '--foreground': '0 0% 15%',
-        '--card': '0 0% 98%',
-        '--card-foreground': '0 0% 15%',
-        '--primary': '8 85% 58%',
-        '--primary-foreground': '0 0% 100%',
-        '--muted': '0 0% 94%',
-        '--muted-foreground': '0 0% 50%',
-        '--border': '0 0% 85%',
-        '--input': '0 0% 94%',
-        '--ring': '8 85% 58%',
-        backgroundColor: 'hsl(0 0% 100%)',
-        color: 'hsl(0 0% 15%)',
-        fontFamily: "'Inter', 'Space Grotesk', sans-serif",
-      } as React.CSSProperties}
-    >
+    <div className="min-h-screen dmi-theme">
       {/* Top bar */}
       <div className="w-full border-b border-border px-6 py-3 flex items-center justify-between">
         <Link
