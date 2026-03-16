@@ -540,27 +540,30 @@
 }
 
 /* Deathmatch Island — fixed color scheme matching the game book */
+.dmi-theme, .dmi-theme * {
+  --background: 0 0% 100% !important;
+  --foreground: 0 0% 15% !important;
+  --card: 0 0% 98% !important;
+  --card-foreground: 0 0% 15% !important;
+  --primary: 8 85% 58% !important;
+  --primary-foreground: 0 0% 100% !important;
+  --secondary: 0 0% 90% !important;
+  --secondary-foreground: 0 0% 15% !important;
+  --muted: 0 0% 94% !important;
+  --muted-foreground: 0 0% 50% !important;
+  --accent: 8 85% 58% !important;
+  --accent-foreground: 0 0% 100% !important;
+  --border: 0 0% 85% !important;
+  --input: 0 0% 94% !important;
+  --ring: 8 85% 58% !important;
+  --neon-glow: 8 85% 58% !important;
+  --neon-purple: 8 85% 58% !important;
+  --neon-pink: 8 85% 58% !important;
+  --font-display: 'Space Grotesk', sans-serif !important;
+  --font-mono: 'Inter', sans-serif !important;
+}
+
 .dmi-theme {
-  --background: 0 0% 100%;
-  --foreground: 0 0% 15%;
-  --card: 0 0% 98%;
-  --card-foreground: 0 0% 15%;
-  --primary: 8 85% 58%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 0 0% 90%;
-  --secondary-foreground: 0 0% 15%;
-  --muted: 0 0% 94%;
-  --muted-foreground: 0 0% 50%;
-  --accent: 8 85% 58%;
-  --accent-foreground: 0 0% 100%;
-  --border: 0 0% 85%;
-  --input: 0 0% 94%;
-  --ring: 8 85% 58%;
-  --neon-glow: 8 85% 58%;
-  --neon-purple: 8 85% 58%;
-  --neon-pink: 8 85% 58%;
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-mono: 'Inter', sans-serif;
   background-color: hsl(0 0% 100%) !important;
   color: hsl(0 0% 15%) !important;
 }
