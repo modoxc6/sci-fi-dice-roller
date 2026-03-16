@@ -145,7 +145,7 @@ const DeathmatchIsland = () => {
               </div>
             </div>
 
-            <VerticalArrow label="Between Pools" />
+            <VerticalArrow />
 
             {/* Pool 2 container */}
             <div className="w-full border-2 border-foreground/20 rounded-lg overflow-hidden">
