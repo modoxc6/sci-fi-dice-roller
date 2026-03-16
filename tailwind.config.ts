@@ -73,6 +73,10 @@ export default {
           purple: "hsl(var(--neon-purple))",
           pink: "hsl(var(--neon-pink))",
         },
+        dmi: {
+          accent: "hsl(8 85% 58%)",
+          "accent-foreground": "hsl(0 0% 100%)",
+        },
       },
       keyframes: {
         "accordion-down": {
