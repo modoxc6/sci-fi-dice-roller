@@ -145,7 +145,7 @@ const DeathmatchIsland = () => {
               </div>
             </div>
 
-            <VerticalArrow label="Between Pools" />
+            <VerticalArrow />
 
             {/* Pool 2 container */}
             <div className="w-full border-2 border-foreground/20 rounded-lg overflow-hidden">
@@ -217,14 +217,11 @@ const DeathmatchIsland = () => {
 };
 
 /* ─── Vertical Arrow Connector ─── */
-function VerticalArrow({ label }: { label?: string }) {
+function VerticalArrow() {
   return (
-    <div className="flex flex-col items-center py-2">
-      <div className="w-px h-6 bg-foreground/20" />
+    <div className="flex flex-col items-center py-1">
+      <div className="w-px h-4 bg-foreground/20" />
       <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-foreground/20" />
-      {label && (
-        <span className="text-[10px] text-muted-foreground uppercase tracking-widest mt-1">{label}</span>
-      )}
     </div>
   );
 }
