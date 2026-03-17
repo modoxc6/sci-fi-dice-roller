@@ -419,17 +419,17 @@ function ResultsSummary({
       <VerticalArrow />
 
       {/* Actions */}
-      <div className="flex gap-4 w-full">
+      <div className="flex gap-3 w-full">
         <button
           onClick={onReroll}
-          className="flex-1 py-3 rounded-lg border-2 border-dashed border-gray-300 font-display text-sm font-bold tracking-widest uppercase text-gray-900 hover:border-dmi-accent/40 transition-all flex items-center justify-center gap-2"
+          className="flex-1 py-2.5 rounded-lg border-2 border-dashed border-gray-300 font-display text-sm font-bold tracking-widest uppercase text-gray-900 hover:border-dmi-accent/40 transition-all flex items-center justify-center gap-2"
         >
           <RotateCcw className="w-4 h-4" />
           Re-Roll
         </button>
         <button
           onClick={onReset}
-          className="flex-1 py-3 rounded-lg bg-dmi-accent text-dmi-accent-foreground font-display text-sm font-bold tracking-widest uppercase hover:opacity-90 transition-all flex items-center justify-center gap-2"
+          className="flex-1 py-2.5 rounded-lg bg-dmi-accent text-dmi-accent-foreground font-display text-sm font-bold tracking-widest uppercase hover:opacity-90 transition-all flex items-center justify-center gap-2"
         >
           <ArrowLeft className="w-4 h-4" />
           New Roll
