@@ -144,8 +144,8 @@ const DeathmatchIsland = () => {
                     onRemove={(idx) => handleRemoveMulti(step.key, idx)}
                   />
                   {i < arr.length - 1 && (
-                    <div className="flex justify-center py-1">
-                      <div className="w-px h-4 bg-gray-200" />
+                    <div className="flex justify-center">
+                      <div className="w-px h-2 bg-gray-200" />
                     </div>
                   )}
                 </div>
