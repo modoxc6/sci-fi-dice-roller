@@ -115,7 +115,7 @@ const DeathmatchIsland = () => {
         </span>
       </div>
 
-      <div className="max-w-xl mx-auto px-4 py-8">
+      <div className="max-w-xl mx-auto px-4 py-4">
         {/* Build phase — always visible */}
         <div className="flex flex-col items-center">
           {/* Title box */}
