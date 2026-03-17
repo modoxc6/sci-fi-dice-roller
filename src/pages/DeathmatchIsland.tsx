@@ -115,11 +115,11 @@ const DeathmatchIsland = () => {
         </span>
       </div>
 
-      <div className="max-w-xl mx-auto px-4 py-8">
+      <div className="max-w-xl mx-auto px-4 py-4">
         {/* Build phase — always visible */}
         <div className="flex flex-col items-center">
           {/* Title box */}
-          <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-4 text-center">
+          <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-3 text-center">
             <h1 className="font-display text-2xl md:text-3xl font-black tracking-wider text-dmi-accent">
               Deathmatch Island
             </h1>
@@ -130,11 +130,11 @@ const DeathmatchIsland = () => {
 
           {/* Pool 1 container */}
           <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
-            <div className="px-6 py-3 border-b border-gray-100">
-              <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool One</h2>
+            <div className="px-4 py-2 border-b border-gray-100">
+              <h2 className="font-display text-base font-bold tracking-wider text-gray-900">Pool One</h2>
               <p className="text-[10px] text-gray-500 uppercase tracking-widest">Action — Sum of top 2 dice</p>
             </div>
-            <div className="px-4 py-4 space-y-0">
+            <div className="px-3 py-2 space-y-0">
               {STEPS.filter((s) => s.pool === 1).map((step, i, arr) => (
                 <div key={step.key}>
                   <StepRow
@@ -144,8 +144,8 @@ const DeathmatchIsland = () => {
                     onRemove={(idx) => handleRemoveMulti(step.key, idx)}
                   />
                   {i < arr.length - 1 && (
-                    <div className="flex justify-center py-1">
-                      <div className="w-px h-4 bg-gray-200" />
+                    <div className="flex justify-center">
+                      <div className="w-px h-2 bg-gray-200" />
                     </div>
                   )}
                 </div>
@@ -157,11 +157,11 @@ const DeathmatchIsland = () => {
 
           {/* Pool 2 container */}
           <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
-            <div className="px-6 py-3 border-b border-gray-100">
-              <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool Two</h2>
+            <div className="px-4 py-2 border-b border-gray-100">
+              <h2 className="font-display text-base font-bold tracking-wider text-gray-900">Pool Two</h2>
               <p className="text-[10px] text-gray-500 uppercase tracking-widest">Acquisition — Highest single die</p>
             </div>
-            <div className="px-4 py-4">
+            <div className="px-3 py-2">
               {STEPS.filter((s) => s.pool === 2).map((step) => (
                 <StepRow
                   key={step.key}
@@ -181,7 +181,7 @@ const DeathmatchIsland = () => {
             onClick={handleRoll}
             disabled={!canRoll() || isRolling}
             className={`
-              w-full py-4 rounded-lg font-display text-lg font-bold tracking-widest uppercase transition-all
+              w-full py-3 rounded-lg font-display text-base font-bold tracking-widest uppercase transition-all
               ${canRoll() && !isRolling
                 ? "bg-dmi-accent text-dmi-accent-foreground hover:opacity-90 cursor-pointer"
                 : "bg-gray-200 text-gray-400 cursor-not-allowed"
@@ -215,7 +215,7 @@ const DeathmatchIsland = () => {
 
         {/* Results — inline below builder */}
         {rollResults && !isRolling && (
-          <div ref={resultsRef} className="mt-8 pt-6 border-t-2 border-dashed border-dmi-accent/30">
+          <div ref={resultsRef} className="mt-4 pt-4 border-t-2 border-dashed border-dmi-accent/30">
             <ResultsSummary rollResults={rollResults} selections={selections} onReset={handleReset} onReroll={handleRoll} />
           </div>
         )}
@@ -227,9 +227,9 @@ const DeathmatchIsland = () => {
 /* ─── Vertical Arrow Connector ─── */
 function VerticalArrow() {
   return (
-    <div className="flex flex-col items-center py-1">
-      <div className="w-px h-4 bg-gray-300" />
-      <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-gray-300" />
+    <div className="flex flex-col items-center">
+      <div className="w-px h-3 bg-gray-300" />
+      <div className="w-0 h-0 border-l-[4px] border-r-[4px] border-t-[5px] border-l-transparent border-r-transparent border-t-gray-300" />
     </div>
   );
 }
@@ -250,7 +250,7 @@ function StepRow({
 
   return (
     <div
-      className={`rounded-lg border-2 transition-all px-4 py-3 ${
+      className={`rounded-lg border-2 transition-all px-3 py-2 ${
         step.mandatory
           ? hasSelection
             ? "border-dmi-accent bg-dmi-accent/10"
@@ -260,7 +260,7 @@ function StepRow({
             : "border-dashed border-gray-200 bg-gray-50"
       }`}
     >
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center justify-between mb-1.5">
         <div className="flex items-center gap-2">
           <h3 className={`font-display text-sm font-bold tracking-wider ${hasSelection ? "text-dmi-accent" : "text-gray-900"}`}>
             {step.label}
@@ -344,14 +344,14 @@ function ResultsSummary({
   const pool2Sorted = [...rollResults.pool2].sort((a, b) => b - a);
 
   return (
-    <div className="flex flex-col items-center gap-6">
+    <div className="flex flex-col items-center gap-3">
       {/* Total — big dashed box */}
-      <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-6 text-center">
+      <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-4 text-center">
         <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Total Score</p>
-        <div className="font-display text-7xl md:text-8xl font-black text-dmi-accent">
+        <div className="font-display text-6xl md:text-7xl font-black text-dmi-accent">
           {rollResults.total}
         </div>
-        <div className="flex items-center justify-center gap-3 mt-2 text-sm text-gray-500 font-display">
+        <div className="flex items-center justify-center gap-3 mt-1 text-sm text-gray-500 font-display">
           <span className="text-dmi-accent font-bold">{rollResults.pool1Result}</span>
           <span>+</span>
           <span className="text-gray-900 font-bold">{rollResults.pool2Result}</span>
@@ -362,18 +362,18 @@ function ResultsSummary({
 
       {/* Pool 1 result */}
       <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
-        <div className="px-6 py-3 border-b border-gray-100 flex items-center justify-between">
+        <div className="px-4 py-2 border-b border-gray-100 flex items-center justify-between">
           <div>
-            <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool One</h2>
+            <h2 className="font-display text-base font-bold tracking-wider text-gray-900">Pool One</h2>
             <p className="text-[10px] text-gray-500 uppercase tracking-widest">Sum of top 2 dice</p>
           </div>
-          <span className="font-display text-2xl font-black text-dmi-accent">= {rollResults.pool1Result}</span>
+          <span className="font-display text-xl font-black text-dmi-accent">= {rollResults.pool1Result}</span>
         </div>
-        <div className="px-6 py-4 flex flex-wrap gap-2">
+        <div className="px-4 py-2 flex flex-wrap gap-2">
           {pool1Sorted.map((val, i) => (
             <span
               key={i}
-              className={`inline-flex items-center justify-center w-12 h-12 rounded-lg font-display font-bold text-sm transition-all
+              className={`inline-flex items-center justify-center w-10 h-10 rounded-lg font-display font-bold text-sm transition-all
                 ${i < 2
                   ? "bg-dmi-accent text-dmi-accent-foreground"
                   : "bg-gray-200 text-gray-400 line-through opacity-50"
@@ -391,18 +391,18 @@ function ResultsSummary({
 
           {/* Pool 2 result */}
           <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
-            <div className="px-6 py-3 border-b border-gray-100 flex items-center justify-between">
+            <div className="px-4 py-2 border-b border-gray-100 flex items-center justify-between">
               <div>
-                <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool Two</h2>
+                <h2 className="font-display text-base font-bold tracking-wider text-gray-900">Pool Two</h2>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest">Highest single die</p>
               </div>
-              <span className="font-display text-2xl font-black text-dmi-accent">= {rollResults.pool2Result}</span>
+              <span className="font-display text-xl font-black text-dmi-accent">= {rollResults.pool2Result}</span>
             </div>
-            <div className="px-6 py-4 flex flex-wrap gap-2">
+            <div className="px-4 py-2 flex flex-wrap gap-2">
               {pool2Sorted.map((val, i) => (
                 <span
                   key={i}
-                  className={`inline-flex items-center justify-center w-12 h-12 rounded-lg font-display font-bold text-sm
+                  className={`inline-flex items-center justify-center w-10 h-10 rounded-lg font-display font-bold text-sm
                     ${i === 0
                       ? "bg-dmi-accent text-dmi-accent-foreground"
                       : "bg-gray-200 text-gray-400 line-through opacity-50"
@@ -419,17 +419,17 @@ function ResultsSummary({
       <VerticalArrow />
 
       {/* Actions */}
-      <div className="flex gap-4 w-full">
+      <div className="flex gap-3 w-full">
         <button
           onClick={onReroll}
-          className="flex-1 py-3 rounded-lg border-2 border-dashed border-gray-300 font-display text-sm font-bold tracking-widest uppercase text-gray-900 hover:border-dmi-accent/40 transition-all flex items-center justify-center gap-2"
+          className="flex-1 py-2.5 rounded-lg border-2 border-dashed border-gray-300 font-display text-sm font-bold tracking-widest uppercase text-gray-900 hover:border-dmi-accent/40 transition-all flex items-center justify-center gap-2"
         >
           <RotateCcw className="w-4 h-4" />
           Re-Roll
         </button>
         <button
           onClick={onReset}
-          className="flex-1 py-3 rounded-lg bg-dmi-accent text-dmi-accent-foreground font-display text-sm font-bold tracking-widest uppercase hover:opacity-90 transition-all flex items-center justify-center gap-2"
+          className="flex-1 py-2.5 rounded-lg bg-dmi-accent text-dmi-accent-foreground font-display text-sm font-bold tracking-widest uppercase hover:opacity-90 transition-all flex items-center justify-center gap-2"
         >
           <ArrowLeft className="w-4 h-4" />
           New Roll
