@@ -250,7 +250,7 @@ function StepRow({
 
   return (
     <div
-      className={`rounded-lg border-2 transition-all px-4 py-3 ${
+      className={`rounded-lg border-2 transition-all px-3 py-2 ${
         step.mandatory
           ? hasSelection
             ? "border-dmi-accent bg-dmi-accent/10"
