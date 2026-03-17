@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, RotateCcw, Info, X } from "lucide-react";
+import { ArrowLeft, RotateCcw, Info, X, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimeText from "@/components/AnimeText";
 
