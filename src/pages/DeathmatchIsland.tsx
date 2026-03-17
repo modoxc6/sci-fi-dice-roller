@@ -362,18 +362,18 @@ function ResultsSummary({
 
       {/* Pool 1 result */}
       <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
-        <div className="px-6 py-3 border-b border-gray-100 flex items-center justify-between">
+        <div className="px-4 py-2 border-b border-gray-100 flex items-center justify-between">
           <div>
-            <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool One</h2>
+            <h2 className="font-display text-base font-bold tracking-wider text-gray-900">Pool One</h2>
             <p className="text-[10px] text-gray-500 uppercase tracking-widest">Sum of top 2 dice</p>
           </div>
-          <span className="font-display text-2xl font-black text-dmi-accent">= {rollResults.pool1Result}</span>
+          <span className="font-display text-xl font-black text-dmi-accent">= {rollResults.pool1Result}</span>
         </div>
-        <div className="px-6 py-4 flex flex-wrap gap-2">
+        <div className="px-4 py-2 flex flex-wrap gap-2">
           {pool1Sorted.map((val, i) => (
             <span
               key={i}
-              className={`inline-flex items-center justify-center w-12 h-12 rounded-lg font-display font-bold text-sm transition-all
+              className={`inline-flex items-center justify-center w-10 h-10 rounded-lg font-display font-bold text-sm transition-all
                 ${i < 2
                   ? "bg-dmi-accent text-dmi-accent-foreground"
                   : "bg-gray-200 text-gray-400 line-through opacity-50"
