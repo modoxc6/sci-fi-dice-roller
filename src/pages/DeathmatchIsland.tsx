@@ -260,7 +260,7 @@ function StepRow({
             : "border-dashed border-gray-200 bg-gray-50"
       }`}
     >
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center justify-between mb-1.5">
         <div className="flex items-center gap-2">
           <h3 className={`font-display text-sm font-bold tracking-wider ${hasSelection ? "text-dmi-accent" : "text-gray-900"}`}>
             {step.label}
