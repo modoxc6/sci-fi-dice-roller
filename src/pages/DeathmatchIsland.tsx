@@ -130,11 +130,11 @@ const DeathmatchIsland = () => {
 
           {/* Pool 1 container */}
           <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
-            <div className="px-6 py-3 border-b border-gray-100">
-              <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool One</h2>
+            <div className="px-4 py-2 border-b border-gray-100">
+              <h2 className="font-display text-base font-bold tracking-wider text-gray-900">Pool One</h2>
               <p className="text-[10px] text-gray-500 uppercase tracking-widest">Action — Sum of top 2 dice</p>
             </div>
-            <div className="px-4 py-4 space-y-0">
+            <div className="px-3 py-2 space-y-0">
               {STEPS.filter((s) => s.pool === 1).map((step, i, arr) => (
                 <div key={step.key}>
                   <StepRow
