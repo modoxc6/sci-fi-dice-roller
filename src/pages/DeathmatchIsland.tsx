@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, RotateCcw, Info, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -30,11 +30,12 @@ const dieLabel = (sides: number) => `d${sides}`;
 
 const DeathmatchIsland = () => {
   const [selections, setSelections] = useState<Record<string, DieSize[]>>({});
-  const [phase, setPhase] = useState<"build" | "rolling" | "results">("build");
+  const [isRolling, setIsRolling] = useState(false);
   const [rollResults, setRollResults] = useState<{
     pool1: number[]; pool2: number[];
     pool1Result: number; pool2Result: number; total: number;
   } | null>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   const handleSelect = (stepKey: string, die: DieSize, multi?: boolean) => {
     setSelections((prev) => {
@@ -62,7 +63,8 @@ const DeathmatchIsland = () => {
   };
 
   const handleRoll = () => {
-    setPhase("rolling");
+    setIsRolling(true);
+    setRollResults(null);
     setTimeout(() => {
       const pool1Dice: DieSize[] = [];
       const pool2Dice: DieSize[] = [];
@@ -81,15 +83,21 @@ const DeathmatchIsland = () => {
       const pool2Result = pool2Rolls.length > 0 ? Math.max(...pool2Rolls) : 0;
 
       setRollResults({ pool1: pool1Rolls, pool2: pool2Rolls, pool1Result, pool2Result, total: pool1Result + pool2Result });
-      setPhase("results");
+      setIsRolling(false);
     }, 1200);
   };
 
   const handleReset = () => {
     setSelections({});
-    setPhase("build");
     setRollResults(null);
   };
+
+  // Scroll to results when they appear
+  useEffect(() => {
+    if (rollResults && resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [rollResults]);
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -108,94 +116,91 @@ const DeathmatchIsland = () => {
       </div>
 
       <div className="max-w-xl mx-auto px-4 py-8">
-        {phase === "build" && (
-          <div className="flex flex-col items-center">
-            {/* Title box — dashed border like reference */}
-            <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-4 text-center">
-              <h1 className="font-display text-2xl md:text-3xl font-black tracking-wider text-dmi-accent">
-                Deathmatch Island
-              </h1>
-              <p className="text-xs text-gray-500 mt-1 uppercase tracking-widest">Roll Builder</p>
+        {/* Build phase — always visible */}
+        <div className="flex flex-col items-center">
+          {/* Title box */}
+          <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-4 text-center">
+            <h1 className="font-display text-2xl md:text-3xl font-black tracking-wider text-dmi-accent">
+              Deathmatch Island
+            </h1>
+            <p className="text-xs text-gray-500 mt-1 uppercase tracking-widest">Roll Builder</p>
+          </div>
+
+          <VerticalArrow />
+
+          {/* Pool 1 container */}
+          <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
+            <div className="px-6 py-3 border-b border-gray-100">
+              <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool One</h2>
+              <p className="text-[10px] text-gray-500 uppercase tracking-widest">Action — Sum of top 2 dice</p>
             </div>
-
-            <VerticalArrow />
-
-            {/* Pool 1 container */}
-            <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
-              <div className="px-6 py-3 border-b border-gray-100">
-                <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool One</h2>
-                <p className="text-[10px] text-gray-500 uppercase tracking-widest">Action — Sum of top 2 dice</p>
-              </div>
-              <div className="px-4 py-4 space-y-0">
-                {STEPS.filter((s) => s.pool === 1).map((step, i, arr) => (
-                  <div key={step.key}>
-                    <StepRow
-                      step={step}
-                      selected={selections[step.key] || []}
-                      onSelect={(die) => handleSelect(step.key, die, step.multi)}
-                      onRemove={(idx) => handleRemoveMulti(step.key, idx)}
-                    />
-                    {i < arr.length - 1 && (
-                      <div className="flex justify-center py-1">
-                        <div className="w-px h-4 bg-gray-200" />
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <VerticalArrow />
-
-            {/* Pool 2 container */}
-            <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
-              <div className="px-6 py-3 border-b border-gray-100">
-                <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool Two</h2>
-                <p className="text-[10px] text-gray-500 uppercase tracking-widest">Acquisition — Highest single die</p>
-              </div>
-              <div className="px-4 py-4">
-                {STEPS.filter((s) => s.pool === 2).map((step) => (
+            <div className="px-4 py-4 space-y-0">
+              {STEPS.filter((s) => s.pool === 1).map((step, i, arr) => (
+                <div key={step.key}>
                   <StepRow
-                    key={step.key}
                     step={step}
                     selected={selections[step.key] || []}
                     onSelect={(die) => handleSelect(step.key, die, step.multi)}
                     onRemove={(idx) => handleRemoveMulti(step.key, idx)}
                   />
-                ))}
-              </div>
+                  {i < arr.length - 1 && (
+                    <div className="flex justify-center py-1">
+                      <div className="w-px h-4 bg-gray-200" />
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-
-            <VerticalArrow />
-
-            {/* Roll button */}
-            <button
-              onClick={handleRoll}
-              disabled={!canRoll()}
-              className={`
-                w-full py-4 rounded-lg font-display text-lg font-bold tracking-widest uppercase transition-all
-                ${canRoll()
-                  ? "bg-dmi-accent text-dmi-accent-foreground hover:opacity-90 cursor-pointer"
-                  : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                }
-              `}
-            >
-              Roll Dice
-            </button>
-
-            {!canRoll() && (
-              <p className="text-xs text-gray-500 mt-2 text-center">
-                Select dice for all required steps (Name, Capability)
-              </p>
-            )}
           </div>
-        )}
 
-        {phase === "rolling" && (
-          <div className="flex flex-col items-center justify-center h-64 gap-4">
-            <div className="font-display text-2xl text-dmi-accent animate-pulse tracking-wider">
-              Rolling dice...
+          <VerticalArrow />
+
+          {/* Pool 2 container */}
+          <div className="w-full border-2 border-gray-200 rounded-lg overflow-hidden">
+            <div className="px-6 py-3 border-b border-gray-100">
+              <h2 className="font-display text-lg font-bold tracking-wider text-gray-900">Pool Two</h2>
+              <p className="text-[10px] text-gray-500 uppercase tracking-widest">Acquisition — Highest single die</p>
             </div>
+            <div className="px-4 py-4">
+              {STEPS.filter((s) => s.pool === 2).map((step) => (
+                <StepRow
+                  key={step.key}
+                  step={step}
+                  selected={selections[step.key] || []}
+                  onSelect={(die) => handleSelect(step.key, die, step.multi)}
+                  onRemove={(idx) => handleRemoveMulti(step.key, idx)}
+                />
+              ))}
+            </div>
+          </div>
+
+          <VerticalArrow />
+
+          {/* Roll button */}
+          <button
+            onClick={handleRoll}
+            disabled={!canRoll() || isRolling}
+            className={`
+              w-full py-4 rounded-lg font-display text-lg font-bold tracking-widest uppercase transition-all
+              ${canRoll() && !isRolling
+                ? "bg-dmi-accent text-dmi-accent-foreground hover:opacity-90 cursor-pointer"
+                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+              }
+            `}
+          >
+            {isRolling ? "Rolling..." : rollResults ? "Re-Roll" : "Roll Dice"}
+          </button>
+
+          {!canRoll() && !rollResults && (
+            <p className="text-xs text-gray-500 mt-2 text-center">
+              Select dice for all required steps (Name, Capability)
+            </p>
+          )}
+        </div>
+
+        {/* Rolling animation */}
+        {isRolling && (
+          <div className="flex flex-col items-center justify-center h-32 gap-4 mt-6">
             <div className="flex gap-2">
               {[...Array(5)].map((_, i) => (
                 <div
@@ -208,8 +213,11 @@ const DeathmatchIsland = () => {
           </div>
         )}
 
-        {phase === "results" && rollResults && (
-          <ResultsSummary rollResults={rollResults} selections={selections} onReset={handleReset} onReroll={handleRoll} />
+        {/* Results — inline below builder */}
+        {rollResults && !isRolling && (
+          <div ref={resultsRef} className="mt-8 pt-6 border-t-2 border-dashed border-dmi-accent/30">
+            <ResultsSummary rollResults={rollResults} selections={selections} onReset={handleReset} onReroll={handleRoll} />
+          </div>
         )}
       </div>
     </div>
