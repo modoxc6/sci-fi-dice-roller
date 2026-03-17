@@ -431,7 +431,7 @@ function ResultsSummary({
           onClick={onReset}
           className="flex-1 py-2.5 rounded-lg bg-dmi-accent text-dmi-accent-foreground font-display text-sm font-bold tracking-widest uppercase hover:opacity-90 transition-all flex items-center justify-center gap-2"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowUp className="w-4 h-4" />
           New Roll
         </button>
       </div>
