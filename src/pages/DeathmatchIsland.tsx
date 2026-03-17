@@ -344,14 +344,14 @@ function ResultsSummary({
   const pool2Sorted = [...rollResults.pool2].sort((a, b) => b - a);
 
   return (
-    <div className="flex flex-col items-center gap-6">
+    <div className="flex flex-col items-center gap-3">
       {/* Total — big dashed box */}
-      <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-6 text-center">
+      <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-4 text-center">
         <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Total Score</p>
-        <div className="font-display text-7xl md:text-8xl font-black text-dmi-accent">
+        <div className="font-display text-6xl md:text-7xl font-black text-dmi-accent">
           {rollResults.total}
         </div>
-        <div className="flex items-center justify-center gap-3 mt-2 text-sm text-gray-500 font-display">
+        <div className="flex items-center justify-center gap-3 mt-1 text-sm text-gray-500 font-display">
           <span className="text-dmi-accent font-bold">{rollResults.pool1Result}</span>
           <span>+</span>
           <span className="text-gray-900 font-bold">{rollResults.pool2Result}</span>
