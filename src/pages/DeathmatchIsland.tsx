@@ -181,7 +181,7 @@ const DeathmatchIsland = () => {
             onClick={handleRoll}
             disabled={!canRoll() || isRolling}
             className={`
-              w-full py-4 rounded-lg font-display text-lg font-bold tracking-widest uppercase transition-all
+              w-full py-3 rounded-lg font-display text-base font-bold tracking-widest uppercase transition-all
               ${canRoll() && !isRolling
                 ? "bg-dmi-accent text-dmi-accent-foreground hover:opacity-90 cursor-pointer"
                 : "bg-gray-200 text-gray-400 cursor-not-allowed"
