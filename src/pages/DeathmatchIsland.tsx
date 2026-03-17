@@ -119,7 +119,7 @@ const DeathmatchIsland = () => {
         {/* Build phase — always visible */}
         <div className="flex flex-col items-center">
           {/* Title box */}
-          <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-4 text-center">
+          <div className="w-full border-2 border-dashed border-dmi-accent/40 rounded-lg px-6 py-3 text-center">
             <h1 className="font-display text-2xl md:text-3xl font-black tracking-wider text-dmi-accent">
               Deathmatch Island
             </h1>
