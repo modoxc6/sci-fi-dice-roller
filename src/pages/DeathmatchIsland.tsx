@@ -215,7 +215,7 @@ const DeathmatchIsland = () => {
 
         {/* Results — inline below builder */}
         {rollResults && !isRolling && (
-          <div ref={resultsRef} className="mt-8 pt-6 border-t-2 border-dashed border-dmi-accent/30">
+          <div ref={resultsRef} className="mt-4 pt-4 border-t-2 border-dashed border-dmi-accent/30">
             <ResultsSummary rollResults={rollResults} selections={selections} onReset={handleReset} onReroll={handleRoll} />
           </div>
         )}
