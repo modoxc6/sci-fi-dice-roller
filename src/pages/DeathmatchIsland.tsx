@@ -227,9 +227,9 @@ const DeathmatchIsland = () => {
 /* ─── Vertical Arrow Connector ─── */
 function VerticalArrow() {
   return (
-    <div className="flex flex-col items-center py-1">
-      <div className="w-px h-4 bg-gray-300" />
-      <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-gray-300" />
+    <div className="flex flex-col items-center">
+      <div className="w-px h-3 bg-gray-300" />
+      <div className="w-0 h-0 border-l-[4px] border-r-[4px] border-t-[5px] border-l-transparent border-r-transparent border-t-gray-300" />
     </div>
   );
 }
